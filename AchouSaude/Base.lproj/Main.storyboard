@@ -17,9 +17,34 @@
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pMX-Ny-wME">
+                                <rect key="frame" x="0.0" y="-49" width="600" height="600"/>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="N5S-i2-emh">
+                                <rect key="frame" x="366" y="513" width="218" height="29"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <segments>
+                                    <segment title="Mapa" width="65"/>
+                                    <segment title="Satélite" width="76"/>
+                                    <segment title="Híbrido" width="75"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="pMX-Ny-wME" secondAttribute="trailing" constant="-16" id="EjC-kx-xN7"/>
+                            <constraint firstItem="pMX-Ny-wME" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="topMargin" id="JuL-Sg-Hck"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="pMX-Ny-wME" secondAttribute="bottom" id="eZt-R7-aP5"/>
+                            <constraint firstItem="N5S-i2-emh" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="fim-ed-JYA"/>
+                            <constraint firstItem="pMX-Ny-wME" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="pQG-G0-ABy"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="N5S-i2-emh" secondAttribute="bottom" constant="10" id="znC-el-mzW"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="mapa" destination="pMX-Ny-wME" id="9Qq-rz-jDd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
