@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapa;
 @property (strong, retain) CLLocationManager *gerenciadorDeLocalizacao;
 
+- (IBAction)tipoMapa:(id)sender;
 
 @end
 

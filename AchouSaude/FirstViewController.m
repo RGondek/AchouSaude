@@ -76,4 +76,7 @@
 
 }
 
+- (IBAction)tipoMapa:(id)sender {
+    
+}
 @end

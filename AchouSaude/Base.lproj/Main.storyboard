@@ -29,6 +29,9 @@
                                     <segment title="Satélite" width="76"/>
                                     <segment title="Híbrido" width="75"/>
                                 </segments>
+                                <connections>
+                                    <action selector="tipoMapa:" destination="9pv-A4-QxB" eventType="valueChanged" id="yKD-1s-hQu"/>
+                                </connections>
                             </segmentedControl>
                             <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" placeholder="Buscar endereço" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yvI-Hm-qY2">
                                 <rect key="frame" x="0.0" y="43" width="600" height="44"/>
