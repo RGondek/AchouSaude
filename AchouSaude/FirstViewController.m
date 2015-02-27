@@ -31,8 +31,6 @@
         [gerenciadorDeLocalizacao requestWhenInUseAuthorization];
     }
     
-    
-    
     mapa.showsUserLocation = YES;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -49,6 +47,33 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)btnVoltar:(id)sender {
+    MKLocalSearchRequest *pedido = [[MKLocalSearchRequest alloc] init];
+    pedido.naturalLanguageQuery = @"Hospital";
+    pedido.region = mapa.region;
+    
+    MKLocalSearch *pesquisa = [[MKLocalSearch alloc] initWithRequest:pedido];
+    
+    _matchingItems = [[NSMutableArray alloc] init];
+    
+    [pesquisa startWithCompletionHandler:^(MKLocalSearchResponse
+                                           *response, NSError *error) {
+        if (response.mapItems.count == 0)
+            NSLog(@"No Matches");
+        else
+            for (MKMapItem *item in response.mapItems)
+            {
+                [_matchingItems addObject:item];
+                MKPointAnnotation *annotation =
+                [[MKPointAnnotation alloc]init];
+                annotation.coordinate = item.placemark.coordinate;
+                annotation.title = item.name;
+                [mapa addAnnotation:annotation];
+            }
+    }];
+
 }
 
 @end

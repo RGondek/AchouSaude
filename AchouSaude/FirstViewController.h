@@ -11,6 +11,10 @@
 
 @interface FirstViewController : UIViewController <CLLocationManagerDelegate>
 
+@property NSMutableArray *matchingItems;
+
+- (IBAction)btnVoltar:(id)sender;
+
 @property (weak, nonatomic) IBOutlet MKMapView *mapa;
 @property (strong, retain) CLLocationManager *gerenciadorDeLocalizacao;
 
