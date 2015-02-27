@@ -18,8 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _vetNome = [[NSMutableArray alloc] initWithObjects:@"Facebook", @"TwoDots", @"Spotify", @"Candy Crush", @"WhatsApp", @"Shazam", nil];
-    _vetEnd = [[NSMutableArray alloc] initWithObjects:@"Redes Sociais", @"Jogos", @"Música", @"Jogos", @"Redes Sociais", @"Música", nil];
+    UIEdgeInsets inset = UIEdgeInsetsMake(25, 0, 0, 0);
+    self.tableView.contentInset = inset;
+    
+    _vetNome = [[NSMutableArray alloc] initWithObjects:@"ALBERT EINSTEIN", @"ALBERT SABIN", @"BENEFICÊNCIA PORTUGUESA", @"CRUZ VERMELHA", @"INCOR - INSTITUTO DO CORAÇÃO", @"MONTREAL", nil];
+    _vetEnd = [[NSMutableArray alloc] initWithObjects:@"Avenida Albert Einstein, 627 - Bairro: Morumbi -São Paulo", @"Rua Diogo Cabrera, 94 - Bairro: Imirim - São Paulo", @"Rua Maestro Cardim, 769 - Bela Vista - Bairro: Paraíso -São Paulo", @"Av. Moreira Guimarães, 699 - Indianópolis - São Paulo", @"Av. Doutor Enéas Carvalho Aguiar, 44 - Bairro: Cerqueira César", @" Rua Padre Damaso, 100 - Centro - Osasco - São Paulo", nil];
     _vetImg = [[NSMutableArray alloc] initWithObjects:@"img01.png", @"img02.png", @"img03.png", @"img04.png", @"img05.png",@"img06.png",nil];
 
     
@@ -46,7 +49,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    return [_vetNome count];
 }
 
 
@@ -73,17 +76,19 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        [_vetNome removeObjectAtIndex:[indexPath row]];
+        [_vetEnd removeObjectAtIndex:[indexPath row]];
+        [_vetImg removeObjectAtIndex:[indexPath row]];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
 
 /*
 // Override to support rearranging the table view.

@@ -18,6 +18,8 @@
 		D5198DBB1A9FB62900EC3C5C /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5198DBA1A9FB62900EC3C5C /* TableViewController.m */; };
 		D5198DBE1A9FB66100EC3C5C /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5198DBD1A9FB66100EC3C5C /* TableViewCell.m */; };
 		D5EAD85A1AA0BAE200958408 /* Hospital.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EAD8591AA0BAE200958408 /* Hospital.m */; };
+		D5EAD85D1AA0CC8500958408 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EAD85C1AA0CC8500958408 /* MapKit.framework */; };
+		D5EAD85F1AA0CC8C00958408 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EAD85E1AA0CC8C00958408 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		D5198DBD1A9FB66100EC3C5C /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		D5EAD8581AA0BAE200958408 /* Hospital.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hospital.h; sourceTree = "<group>"; };
 		D5EAD8591AA0BAE200958408 /* Hospital.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hospital.m; sourceTree = "<group>"; };
+		D5EAD85C1AA0CC8500958408 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D5EAD85E1AA0CC8C00958408 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5EAD85F1AA0CC8C00958408 /* CoreLocation.framework in Frameworks */,
+				D5EAD85D1AA0CC8500958408 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +81,8 @@
 		D5198D841A9FB2FF00EC3C5C = {
 			isa = PBXGroup;
 			children = (
+				D5EAD85E1AA0CC8C00958408 /* CoreLocation.framework */,
+				D5EAD85C1AA0CC8500958408 /* MapKit.framework */,
 				D5198D8F1A9FB30000EC3C5C /* AchouSaude */,
 				D5198DAC1A9FB30000EC3C5C /* AchouSaudeTests */,
 				D5198D8E1A9FB30000EC3C5C /* Products */,
