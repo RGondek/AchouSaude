@@ -17,6 +17,7 @@
 		D5198DB01A9FB30000EC3C5C /* AchouSaudeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5198DAF1A9FB30000EC3C5C /* AchouSaudeTests.m */; };
 		D5198DBB1A9FB62900EC3C5C /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5198DBA1A9FB62900EC3C5C /* TableViewController.m */; };
 		D5198DBE1A9FB66100EC3C5C /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5198DBD1A9FB66100EC3C5C /* TableViewCell.m */; };
+		D5EAD85A1AA0BAE200958408 /* Hospital.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EAD8591AA0BAE200958408 /* Hospital.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		D5198DBA1A9FB62900EC3C5C /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		D5198DBC1A9FB66100EC3C5C /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		D5198DBD1A9FB66100EC3C5C /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		D5EAD8581AA0BAE200958408 /* Hospital.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hospital.h; sourceTree = "<group>"; };
+		D5EAD8591AA0BAE200958408 /* Hospital.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hospital.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 				D5198DBA1A9FB62900EC3C5C /* TableViewController.m */,
 				D5198DBC1A9FB66100EC3C5C /* TableViewCell.h */,
 				D5198DBD1A9FB66100EC3C5C /* TableViewCell.m */,
+				D5EAD8581AA0BAE200958408 /* Hospital.h */,
+				D5EAD8591AA0BAE200958408 /* Hospital.m */,
 				D5198DA01A9FB30000EC3C5C /* Images.xcassets */,
 				D5198DA21A9FB30000EC3C5C /* LaunchScreen.xib */,
 				D5198D901A9FB30000EC3C5C /* Supporting Files */,
@@ -183,6 +188,7 @@
 				TargetAttributes = {
 					D5198D8C1A9FB30000EC3C5C = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 7YCYVAN8PU;
 					};
 					D5198DA81A9FB30000EC3C5C = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -236,6 +242,7 @@
 			files = (
 				D5198D9C1A9FB30000EC3C5C /* SecondViewController.m in Sources */,
 				D5198DBE1A9FB66100EC3C5C /* TableViewCell.m in Sources */,
+				D5EAD85A1AA0BAE200958408 /* Hospital.m in Sources */,
 				D5198D961A9FB30000EC3C5C /* AppDelegate.m in Sources */,
 				D5198D991A9FB30000EC3C5C /* FirstViewController.m in Sources */,
 				D5198DBB1A9FB62900EC3C5C /* TableViewController.m in Sources */,
@@ -361,9 +368,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AchouSaude/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -371,9 +381,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AchouSaude/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -430,6 +443,7 @@
 				D5198DB51A9FB30000EC3C5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D5198DB61A9FB30000EC3C5C /* Build configuration list for PBXNativeTarget "AchouSaudeTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +452,7 @@
 				D5198DB81A9FB30000EC3C5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

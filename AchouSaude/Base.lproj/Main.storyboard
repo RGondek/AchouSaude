@@ -17,6 +17,11 @@
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PZD-kZ-BbP">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
@@ -109,7 +114,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="tjl-61-U5z" customClass="TableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AppCell" rowHeight="90" id="tjl-61-U5z" customClass="TableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tjl-61-U5z" id="mvK-xY-F1C">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -146,6 +151,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="imgCell" destination="cb4-vf-4uX" id="php-ih-VZx"/>
+                                    <outlet property="lblEndCell" destination="dcQ-Oo-oz9" id="Mtx-tv-qDd"/>
+                                    <outlet property="lblNomeCell" destination="IIN-8E-J6R" id="QyP-Sa-NYe"/>
                                     <segue destination="49e-Tb-3d3" kind="show" identifier="showTabMapa" id="7Cv-da-QUm"/>
                                 </connections>
                             </tableViewCell>

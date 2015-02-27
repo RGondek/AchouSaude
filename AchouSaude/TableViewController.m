@@ -7,6 +7,7 @@
 //
 
 #import "TableViewController.h"
+#import "TableViewCell.h"
 
 @interface TableViewController ()
 
@@ -16,6 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _vetNome = [[NSMutableArray alloc] initWithObjects:@"Facebook", @"TwoDots", @"Spotify", @"Candy Crush", @"WhatsApp", @"Shazam", nil];
+    _vetEnd = [[NSMutableArray alloc] initWithObjects:@"Redes Sociais", @"Jogos", @"Música", @"Jogos", @"Redes Sociais", @"Música", nil];
+    _vetImg = [[NSMutableArray alloc] initWithObjects:@"img01.png", @"img02.png", @"img03.png", @"img04.png", @"img05.png",@"img06.png",nil];
+
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -34,24 +40,30 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 1;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    
+    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AppCell" forIndexPath:indexPath];
+    
+    long row = [indexPath row];
+    
+    [cell.lblNomeCell setText:_vetNome[row]];
+    [cell.imgCell setImage:[UIImage imageNamed:_vetImg[row]]];
+    [cell.lblEndCell setText:_vetEnd[row]];
     
     // Configure the cell...
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

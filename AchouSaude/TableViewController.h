@@ -10,4 +10,8 @@
 
 @interface TableViewController : UITableViewController
 
+@property NSMutableArray* vetNome;
+@property NSMutableArray* vetImg;
+@property NSMutableArray* vetEnd;
+
 @end
