@@ -22,7 +22,7 @@
     self.tableView.contentInset = inset;
     
     _vetNome = [[NSMutableArray alloc] initWithObjects:@"ALBERT EINSTEIN", @"ALBERT SABIN", @"BENEFICÊNCIA PORTUGUESA", @"CRUZ VERMELHA", @"INCOR - INSTITUTO DO CORAÇÃO", @"MONTREAL", nil];
-    _vetEnd = [[NSMutableArray alloc] initWithObjects:@"Avenida Albert Einstein, 627 - Bairro: Morumbi -São Paulo", @"Rua Diogo Cabrera, 94 - Bairro: Imirim - São Paulo", @"Rua Maestro Cardim, 769 - Bela Vista - Bairro: Paraíso -São Paulo", @"Av. Moreira Guimarães, 699 - Indianópolis - São Paulo", @"Av. Doutor Enéas Carvalho Aguiar, 44 - Bairro: Cerqueira César", @" Rua Padre Damaso, 100 - Centro - Osasco - São Paulo", nil];
+    _vetEnd = [[NSMutableArray alloc] initWithObjects:@"Morumbi -São Paulo", @"Imirim - São Paulo", @"Paraíso -São Paulo", @"Indianópolis - São Paulo", @"Cerqueira César - São Paulo", @"Centro - Osasco - São Paulo", nil];
     _vetImg = [[NSMutableArray alloc] initWithObjects:@"img01.png", @"img02.png", @"img03.png", @"img04.png", @"img05.png",@"img06.png",nil];
 
     
