@@ -77,6 +77,17 @@
 }
 
 - (IBAction)tipoMapa:(id)sender {
+    UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
+    NSInteger selectedSegment = segmentedControl.selectedSegmentIndex;
     
+    if(selectedSegment == 0) {
+        [mapa setMapType:MKMapTypeStandard];
+    }
+    else if (selectedSegment == 1) {
+        [mapa setMapType:MKMapTypeSatellite];
+    }
+    else {
+        [mapa setMapType:MKMapTypeHybrid];
+    }
 }
 @end
