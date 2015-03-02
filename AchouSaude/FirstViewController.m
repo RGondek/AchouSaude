@@ -49,32 +49,32 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)btnVoltar:(id)sender {
-    MKLocalSearchRequest *pedido = [[MKLocalSearchRequest alloc] init];
-    pedido.naturalLanguageQuery = @"Hospital";
-    pedido.region = mapa.region;
-    
-    MKLocalSearch *pesquisa = [[MKLocalSearch alloc] initWithRequest:pedido];
-    
-    _matchingItems = [[NSMutableArray alloc] init];
-    
-    [pesquisa startWithCompletionHandler:^(MKLocalSearchResponse
-                                           *response, NSError *error) {
-        if (response.mapItems.count == 0)
-            NSLog(@"No Matches");
-        else
-            for (MKMapItem *item in response.mapItems)
-            {
-                [_matchingItems addObject:item];
-                MKPointAnnotation *annotation =
-                [[MKPointAnnotation alloc]init];
-                annotation.coordinate = item.placemark.coordinate;
-                annotation.title = item.name;
-                [mapa addAnnotation:annotation];
-            }
-    }];
-
-}
+//- (IBAction)btnVoltar:(id)sender {
+//    MKLocalSearchRequest *pedido = [[MKLocalSearchRequest alloc] init];
+//    pedido.naturalLanguageQuery = @"Hosp ital";
+//    pedido.region = mapa.region;
+//    
+//    MKLocalSearch *pesquisa = [[MKLocalSearch alloc] initWithRequest:pedido];
+//    
+//    _matchingItems = [[NSMutableArray alloc] init];
+//    
+//    [pesquisa startWithCompletionHandler:^(MKLocalSearchResponse
+//                                           *response, NSError *error) {
+//        if (response.mapItems.count == 0)
+//            NSLog(@"No Matches");
+//        else
+//            for (MKMapItem *item in response.mapItems)
+//            {
+//                [_matchingItems addObject:item];
+//                MKPointAnnotation *annotation =
+//                [[MKPointAnnotation alloc]init];
+//                annotation.coordinate = item.placemark.coordinate;
+//                annotation.title = item.name;
+//                [mapa addAnnotation:annotation];
+//            }
+//    }];
+//
+//}
 
 - (IBAction)tipoMapa:(id)sender {
     UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
@@ -90,4 +90,30 @@
         [mapa setMapType:MKMapTypeHybrid];
     }
 }
+
+- (IBAction)btnVoltar:(id)sender {
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString:@"Rua Caio Prado, 32" completionHandler:^(NSArray *placemarks, NSError *error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            CLPlacemark *placemark = [placemarks lastObject];
+            float spanX = 0.00725;
+            float spanY = 0.00725;
+            MKCoordinateRegion region;
+            region.center.latitude = placemark.location.coordinate.latitude;
+            region.center.longitude = placemark.location.coordinate.longitude;
+            region.span = MKCoordinateSpanMake(spanX, spanY);
+            [self.mapa setRegion:region animated:YES];
+            
+            
+            MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
+            annotation.coordinate = placemark.location.coordinate;
+            annotation.title = @"Teste";
+            [mapa addAnnotation:annotation];
+
+        }
+    }];
+}
+
 @end

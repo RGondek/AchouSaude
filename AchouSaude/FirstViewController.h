@@ -14,11 +14,13 @@
 @property NSMutableArray *matchingItems;
 
 - (IBAction)btnVoltar:(id)sender;
+- (IBAction)searchBox:(UITextField *)sender;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapa;
 @property (strong, retain) CLLocationManager *gerenciadorDeLocalizacao;
 
 - (IBAction)tipoMapa:(id)sender;
+
 
 @end
 
