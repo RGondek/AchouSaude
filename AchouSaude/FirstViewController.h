@@ -12,6 +12,7 @@
 @interface FirstViewController : UIViewController <CLLocationManagerDelegate>
 
 @property NSMutableArray *matchingItems;
+@property NSMutableArray *annot;
 
 - (IBAction)btnVoltar:(id)sender;
 

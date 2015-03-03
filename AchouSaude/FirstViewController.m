@@ -43,6 +43,33 @@
     
     mapa.showsUserLocation = YES;
     [super viewDidLoad];
+    
+    
+    // Insere Hospitais
+    
+    TableViewController* teste = [[TableViewController alloc] init];
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
+    _annot = [[NSMutableArray alloc] init];
+    for (NSString* end in teste.vetEnd) {
+        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+        [geocoder geocodeAddressString:end completionHandler:^(NSArray *placemarks, NSError *error) {
+            if (error) {
+                NSLog(@"%@", error);
+            } else {
+                CLPlacemark *placemark = [placemarks lastObject];
+                
+                annotation.coordinate = placemark.location.coordinate;
+                annotation.title = [teste.vetNome objectAtIndex:[teste.vetEnd indexOfObject:end]];
+                [_annot addObject:annotation];
+                [mapa addAnnotation:annotation];
+                [mapa viewForAnnotation:annotation];
+            }
+        }];
+    }
+    for (MKPointAnnotation *ann in _annot) {
+        [mapa addAnnotation:ann];
+    }
+
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -105,31 +132,6 @@
 
 
 - (IBAction)btnVoltar:(id)sender {
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    TableViewController* teste = [[TableViewController alloc] init];
-    for (NSString* end in teste.vetEnd) {
-        [geocoder geocodeAddressString:end completionHandler:^(NSArray *placemarks, NSError *error) {
-            if (error) {
-                NSLog(@"%@", error);
-            } else {
-                CLPlacemark *placemark = [placemarks lastObject];
-                float spanX = 0.00725;
-                float spanY = 0.00725;
-                MKCoordinateRegion region;
-                region.center.latitude = placemark.location.coordinate.latitude;
-                region.center.longitude = placemark.location.coordinate.longitude;
-                region.span = MKCoordinateSpanMake(spanX, spanY);
-                [self.mapa setRegion:region animated:YES];
-                
-                
-                MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
-                annotation.coordinate = placemark.location.coordinate;
-                annotation.title = @"Teste";
-                [mapa addAnnotation:annotation];
-                
-            }
-        }];
-    }
 }
 
 - (IBAction)minhaLocalizacao:(id)sender {
