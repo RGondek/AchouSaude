@@ -14,9 +14,16 @@
 
 @implementation SecondViewController
 
+@synthesize convenioHosp, convenios;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    convenioHosp = [[NSMutableArray alloc] init];
+    convenios = @[@"AMIL",@"UNIMED"];
+    [convenioHosp addObject:convenios];
+    
 }
 
 - (void)didReceiveMemoryWarning {

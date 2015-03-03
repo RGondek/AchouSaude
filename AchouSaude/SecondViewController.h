@@ -10,8 +10,8 @@
 
 @interface SecondViewController : UIViewController
 
-@property NSArray* convenioHosp;
-@property NSMutableArray* convenios;
+@property NSMutableArray* convenioHosp;
+@property NSArray* convenios;
 @property NSArray* tel;
 @property NSArray* horario;
 @property NSArray* end;
