@@ -9,6 +9,7 @@
 #import "FirstViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+#import "TableViewController.h"
 
 @interface FirstViewController ()
 
@@ -105,27 +106,30 @@
 
 - (IBAction)btnVoltar:(id)sender {
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder geocodeAddressString:@"Rua Caio Prado, 32, São Paulo - SP" completionHandler:^(NSArray *placemarks, NSError *error) {
-        if (error) {
-            NSLog(@"%@", error);
-        } else {
-            CLPlacemark *placemark = [placemarks lastObject];
-            float spanX = 0.00725;
-            float spanY = 0.00725;
-            MKCoordinateRegion region;
-            region.center.latitude = placemark.location.coordinate.latitude;
-            region.center.longitude = placemark.location.coordinate.longitude;
-            region.span = MKCoordinateSpanMake(spanX, spanY);
-            [self.mapa setRegion:region animated:YES];
-            
-            
-            MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
-            annotation.coordinate = placemark.location.coordinate;
-            annotation.title = @"Teste";
-            [mapa addAnnotation:annotation];
-
-        }
-    }];
+    TableViewController* teste = [[TableViewController alloc] init];
+    for (NSString* end in teste.vetEnd) {
+        [geocoder geocodeAddressString:end completionHandler:^(NSArray *placemarks, NSError *error) {
+            if (error) {
+                NSLog(@"%@", error);
+            } else {
+                CLPlacemark *placemark = [placemarks lastObject];
+                float spanX = 0.00725;
+                float spanY = 0.00725;
+                MKCoordinateRegion region;
+                region.center.latitude = placemark.location.coordinate.latitude;
+                region.center.longitude = placemark.location.coordinate.longitude;
+                region.span = MKCoordinateSpanMake(spanX, spanY);
+                [self.mapa setRegion:region animated:YES];
+                
+                
+                MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
+                annotation.coordinate = placemark.location.coordinate;
+                annotation.title = @"Teste";
+                [mapa addAnnotation:annotation];
+                
+            }
+        }];
+    }
 }
 
 - (IBAction)minhaLocalizacao:(id)sender {

@@ -15,16 +15,13 @@
 
 @implementation TableViewController
 
+@synthesize vetEnd;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     UIEdgeInsets inset = UIEdgeInsetsMake(25, 0, 0, 0);
     self.tableView.contentInset = inset;
-    
-    _vetNome = [[NSMutableArray alloc] initWithObjects:@"ALBERT EINSTEIN", @"ALBERT SABIN", @"HOSPITAL ALVORADA", @"HOSPITAL BANDEIRANTES", @"HOSPITAL BENEFICIENCIA PORTUGUESA", nil];
-    _vetEnd = [[NSMutableArray alloc] initWithObjects:@"Morumbi -São Paulo", @"Lapa - São Paulo", @"Moema -São Paulo", @"Liberdade - São Paulo", @"Paraiso - São Paulo", nil];
-    _vetImg = [[NSMutableArray alloc] initWithObjects:@"img01.png", @"img02.png", @"img03.png", @"img04.png", @"img05.png",@"img06.png",nil];
-
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -36,6 +33,17 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(instancetype)init{
+    self = [super init];
+    
+    if(self){
+        _vetNome = [[NSMutableArray alloc] initWithObjects:@"ALBERT EINSTEIN", @"ALBERT SABIN", @"HOSPITAL ALVORADA", @"HOSPITAL BANDEIRANTES", @"HOSPITAL BENEFICIENCIA PORTUGUESA", nil];
+        vetEnd = [[NSMutableArray alloc] initWithObjects:@"Morumbi -São Paulo", @"Lapa - São Paulo", @"Moema -São Paulo", @"Liberdade - São Paulo", @"Paraiso - São Paulo", nil];
+        _vetImg = [[NSMutableArray alloc] initWithObjects:@"img01.png", @"img02.png", @"img03.png", @"img04.png", @"img05.png",@"img06.png",nil];
+    }
+    return self;
 }
 
 #pragma mark - Table view data source
@@ -61,7 +69,7 @@
     
     [cell.lblNomeCell setText:_vetNome[row]];
     [cell.imgCell setImage:[UIImage imageNamed:_vetImg[row]]];
-    [cell.lblEndCell setText:_vetEnd[row]];
+    [cell.lblEndCell setText:vetEnd[row]];
     
     // Configure the cell...
     
@@ -82,7 +90,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         [_vetNome removeObjectAtIndex:[indexPath row]];
-        [_vetEnd removeObjectAtIndex:[indexPath row]];
+        [vetEnd removeObjectAtIndex:[indexPath row]];
         [_vetImg removeObjectAtIndex:[indexPath row]];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
