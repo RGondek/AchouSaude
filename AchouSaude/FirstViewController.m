@@ -16,9 +16,18 @@
 
 @implementation FirstViewController
 
-@synthesize gerenciadorDeLocalizacao, mapa;
+@synthesize gerenciadorDeLocalizacao, mapa, botaoMinhaLocalizacao, detalheTipoMapa;
 
 - (void)viewDidLoad {
+    [botaoMinhaLocalizacao.layer setBorderColor: [UIColor colorWithRed:0 green:0.4 blue:1 alpha:1].CGColor];
+    [botaoMinhaLocalizacao.layer setBorderWidth:1.0f];
+    [botaoMinhaLocalizacao.layer setCornerRadius:5.0f];
+    [botaoMinhaLocalizacao setClipsToBounds:YES];
+    
+    [detalheTipoMapa.layer setBorderColor: [UIColor colorWithRed:0 green:0.4 blue:1 alpha:1].CGColor];
+    [detalheTipoMapa.layer setBorderWidth:1.0f];
+    [detalheTipoMapa.layer setCornerRadius:5.0f];
+    [detalheTipoMapa setClipsToBounds:YES];
     
     
     gerenciadorDeLocalizacao = [[CLLocationManager alloc] init];
@@ -76,6 +85,8 @@
 //
 //}
 
+
+//Definindo o tipo de mapa.
 - (IBAction)tipoMapa:(id)sender {
     UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
     NSInteger selectedSegment = segmentedControl.selectedSegmentIndex;
@@ -91,9 +102,10 @@
     }
 }
 
+
 - (IBAction)btnVoltar:(id)sender {
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder geocodeAddressString:@"Rua Caio Prado, 32" completionHandler:^(NSArray *placemarks, NSError *error) {
+    [geocoder geocodeAddressString:@"Rua Caio Prado, 32, São Paulo - SP" completionHandler:^(NSArray *placemarks, NSError *error) {
         if (error) {
             NSLog(@"%@", error);
         } else {
@@ -114,6 +126,13 @@
 
         }
     }];
+}
+
+- (IBAction)minhaLocalizacao:(id)sender {
+    gerenciadorDeLocalizacao = [[CLLocationManager alloc] init];
+    [gerenciadorDeLocalizacao setDesiredAccuracy:kCLLocationAccuracyBest];
+    [gerenciadorDeLocalizacao setDelegate:self];
+    [gerenciadorDeLocalizacao startUpdatingLocation];
 }
 
 @end
