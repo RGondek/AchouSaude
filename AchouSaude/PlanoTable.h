@@ -10,4 +10,7 @@
 
 @interface PlanoTable : UITableViewController
 
+@property NSMutableArray *convenioNome;
+@property NSMutableArray *convenioImg;
+
 @end

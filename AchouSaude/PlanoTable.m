@@ -7,6 +7,7 @@
 //
 
 #import "PlanoTable.h"
+#import "PlanoTableCell.h"
 
 @interface PlanoTable ()
 
@@ -26,6 +27,13 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    
+    UIEdgeInsets inset = UIEdgeInsetsMake(25, 0, 0, 0);
+    self.tableView.contentInset = inset;
+    
+    _convenioNome = [[NSMutableArray alloc]initWithObjects:@"ALIANZ",@"AMIL",@"AMIL BLUE", @"BRADESCO", @"CARE PLUS", @"DIX AMIL", @"INTERMEDICA", @"GAMA SAUDE",@"GOLDEN CROSS", @"GREEN LINE", @"ITAU",@"MARITIMA",@"MEDIAL",@"MED SERVICE",@"PORTO SEGURO", @"SUL AMERICA", nil];
+    
+    _convenioImg= [[NSMutableArray alloc]initWithObjects:@"cimg01.png", @"cimg02.png", @"cimg03.png", @"cimg04.png", @"cimg05.png",@"cimg06.png", @"cimg07.png", @"cimg08.png", @"cimg09.png", @"cimg10.png", @"cimg11.png",@"cimg12.png", @"cimg13.png", @"cimg14.png",@"cimg15.png", @"cimg16.png",nil];
     // Dispose of any resources that can be recreated.
 }
 
@@ -33,16 +41,20 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 0;
+    return _convenioNome.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlanoCell" forIndexPath:indexPath];
+    
+    
+   
+    
     
     // Configure the cell...
     
