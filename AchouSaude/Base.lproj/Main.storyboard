@@ -31,17 +31,28 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="N5S-i2-emh">
-                                <rect key="frame" x="366" y="513" width="218" height="29"/>
+                                <rect key="frame" x="402" y="513" width="182" height="29"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <segments>
-                                    <segment title="Mapa" width="65"/>
-                                    <segment title="Satélite" width="76"/>
-                                    <segment title="Híbrido" width="75"/>
+                                    <segment title="Mapa" width="60"/>
+                                    <segment title="Satélite" width="60"/>
+                                    <segment title="Híbrido" width="60"/>
                                 </segments>
                                 <connections>
                                     <action selector="tipoMapa:" destination="9pv-A4-QxB" eventType="valueChanged" id="yKD-1s-hQu"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yvb-GJ-8zo">
+                                <rect key="frame" x="11" y="513" width="135" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="n9s-ED-iEW"/>
+                                </constraints>
+                                <state key="normal" title="Minha Localização"/>
+                                <connections>
+                                    <action selector="minhaLocalizacao:" destination="9pv-A4-QxB" eventType="touchUpInside" id="IeY-97-Ag9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -50,7 +61,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="pMX-Ny-wME" secondAttribute="trailing" constant="-16" id="EjC-kx-xN7"/>
                             <constraint firstItem="pMX-Ny-wME" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="topMargin" id="JuL-Sg-Hck"/>
                             <constraint firstItem="AXK-LO-6ux" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="LAr-Ye-A0M"/>
+                            <constraint firstItem="Yvb-GJ-8zo" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-5" id="NkS-xM-uHa"/>
                             <constraint firstItem="AXK-LO-6ux" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="RpL-hl-b6D"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="Yvb-GJ-8zo" secondAttribute="bottom" constant="8" id="UD3-hs-4kb"/>
                             <constraint firstItem="AXK-LO-6ux" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="bbm-Ba-Yeb"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="pMX-Ny-wME" secondAttribute="bottom" id="eZt-R7-aP5"/>
                             <constraint firstItem="N5S-i2-emh" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="fim-ed-JYA"/>
@@ -72,6 +85,8 @@
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
                     <navigationItem key="navigationItem" title="Title" id="tz8-Yv-12j"/>
                     <connections>
+                        <outlet property="botaoMinhaLocalizacao" destination="Yvb-GJ-8zo" id="iDa-Kw-AfF"/>
+                        <outlet property="detalheTipoMapa" destination="N5S-i2-emh" id="vST-fj-WKj"/>
                         <outlet property="mapa" destination="pMX-Ny-wME" id="9Qq-rz-jDd"/>
                     </connections>
                 </viewController>
