@@ -14,17 +14,15 @@
 @property NSMutableArray *matchingItems;
 @property NSMutableArray *annot;
 
-- (IBAction)btnVoltar:(id)sender;
-
 @property (weak, nonatomic) IBOutlet MKMapView *mapa;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *detalheTipoMapa;
+@property (weak, nonatomic) IBOutlet UIButton *botaoMinhaLocalizacao;
 @property (strong, retain) CLLocationManager *gerenciadorDeLocalizacao;
 
+- (IBAction)btnVoltar:(id)sender;
 - (IBAction)tipoMapa:(id)sender;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *detalheTipoMapa;
-
 - (IBAction)minhaLocalizacao:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UIButton *botaoMinhaLocalizacao;
 
 @end
 

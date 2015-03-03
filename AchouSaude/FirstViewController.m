@@ -45,30 +45,7 @@
     [super viewDidLoad];
     
     
-    // Insere Hospitais
     
-    TableViewController* teste = [[TableViewController alloc] init];
-    MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
-    _annot = [[NSMutableArray alloc] init];
-    for (NSString* end in teste.vetEnd) {
-        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-        [geocoder geocodeAddressString:end completionHandler:^(NSArray *placemarks, NSError *error) {
-            if (error) {
-                NSLog(@"%@", error);
-            } else {
-                CLPlacemark *placemark = [placemarks lastObject];
-                
-                annotation.coordinate = placemark.location.coordinate;
-                annotation.title = [teste.vetNome objectAtIndex:[teste.vetEnd indexOfObject:end]];
-                [_annot addObject:annotation];
-                [mapa addAnnotation:annotation];
-                [mapa viewForAnnotation:annotation];
-            }
-        }];
-    }
-    for (MKPointAnnotation *ann in _annot) {
-        [mapa addAnnotation:ann];
-    }
 
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -76,7 +53,31 @@
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     CLLocationCoordinate2D coord = [[locations lastObject]coordinate];
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 150, 150);
-    NSLog(@"%@", [locations lastObject]);
+    NSLog(@"Primeiro: %@", [locations lastObject]);
+    
+    // Insere Hospitais
+    
+    TableViewController* teste = [[TableViewController alloc] init];
+   
+  
+    for (NSString* end in teste.vetEnd) {
+        NSLog(@"End: %@", end);
+        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+        [geocoder geocodeAddressString:end completionHandler:^(NSArray *placemarks, NSError *error) {
+            if (error) {
+                NSLog(@"%@", error);
+            } else {
+                CLPlacemark *placemark = [placemarks lastObject];
+                MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
+                annotation.coordinate = placemark.location.coordinate;
+                annotation.title = [teste.vetNome objectAtIndex:[teste.vetEnd indexOfObject:end]];
+                NSLog(@"coord: %f, %f", annotation.coordinate.latitude, annotation.coordinate.longitude);
+                NSLog(@"title: %@", annotation.title);
+                [mapa addAnnotation:annotation];
+            }
+        }];
+    }
+
    [mapa setRegion:region animated:YES];
    [gerenciadorDeLocalizacao stopUpdatingLocation];
 }
