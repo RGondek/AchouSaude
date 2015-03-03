@@ -14,4 +14,7 @@
 @property NSMutableArray* vetImg;
 @property NSMutableArray* vetEnd;
 
+@property NSMutableArray* convenioHosp;
+@property NSArray* convenios;
+
 @end

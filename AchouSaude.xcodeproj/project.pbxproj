@@ -10,7 +10,6 @@
 		D5198D931A9FB30000EC3C5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5198D921A9FB30000EC3C5C /* main.m */; };
 		D5198D961A9FB30000EC3C5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5198D951A9FB30000EC3C5C /* AppDelegate.m */; };
 		D5198D991A9FB30000EC3C5C /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5198D981A9FB30000EC3C5C /* FirstViewController.m */; };
-		D5198D9C1A9FB30000EC3C5C /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5198D9B1A9FB30000EC3C5C /* SecondViewController.m */; };
 		D5198D9F1A9FB30000EC3C5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5198D9D1A9FB30000EC3C5C /* Main.storyboard */; };
 		D5198DA11A9FB30000EC3C5C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5198DA01A9FB30000EC3C5C /* Images.xcassets */; };
 		D5198DA41A9FB30000EC3C5C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5198DA21A9FB30000EC3C5C /* LaunchScreen.xib */; };
@@ -42,8 +41,6 @@
 		D5198D951A9FB30000EC3C5C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D5198D971A9FB30000EC3C5C /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		D5198D981A9FB30000EC3C5C /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		D5198D9A1A9FB30000EC3C5C /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		D5198D9B1A9FB30000EC3C5C /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		D5198D9E1A9FB30000EC3C5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D5198DA01A9FB30000EC3C5C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D5198DA31A9FB30000EC3C5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -111,13 +108,11 @@
 				D5198D951A9FB30000EC3C5C /* AppDelegate.m */,
 				D5198D971A9FB30000EC3C5C /* FirstViewController.h */,
 				D5198D981A9FB30000EC3C5C /* FirstViewController.m */,
-				D5198D9A1A9FB30000EC3C5C /* SecondViewController.h */,
-				D5198D9B1A9FB30000EC3C5C /* SecondViewController.m */,
-				D5198D9D1A9FB30000EC3C5C /* Main.storyboard */,
 				D52AF6EB1AA63EBC0088CBEB /* PlanoTable.h */,
 				D52AF6EC1AA63EBC0088CBEB /* PlanoTable.m */,
 				D52AF6EE1AA63ED50088CBEB /* PlanoTableCell.h */,
 				D52AF6EF1AA63ED50088CBEB /* PlanoTableCell.m */,
+				D5198D9D1A9FB30000EC3C5C /* Main.storyboard */,
 				D5198DB91A9FB62900EC3C5C /* TableViewController.h */,
 				D5198DBA1A9FB62900EC3C5C /* TableViewController.m */,
 				D5198DBC1A9FB66100EC3C5C /* TableViewCell.h */,
@@ -259,7 +254,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5198D9C1A9FB30000EC3C5C /* SecondViewController.m in Sources */,
 				D52AF6ED1AA63EBC0088CBEB /* PlanoTable.m in Sources */,
 				D5198DBE1A9FB66100EC3C5C /* TableViewCell.m in Sources */,
 				D52AF6EA1AA503010088CBEB /* Hospital.m in Sources */,
