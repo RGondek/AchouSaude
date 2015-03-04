@@ -14,6 +14,7 @@
 @end
 
 @implementation PlanoTable
+@synthesize convenioImg, convenioNome;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,12 +32,15 @@
     UIEdgeInsets inset = UIEdgeInsetsMake(25, 0, 0, 0);
     self.tableView.contentInset = inset;
     
-    _convenioNome = [[NSMutableArray alloc]initWithObjects:@"ALIANZ",@"AMIL",@"AMIL BLUE", @"BRADESCO", @"CARE PLUS", @"DIX AMIL", @"INTERMEDICA", @"GAMA SAUDE",@"GOLDEN CROSS", @"GREEN LINE", @"ITAU",@"MARITIMA",@"MEDIAL",@"MED SERVICE",@"PORTO SEGURO", @"SUL AMERICA", nil];
+    convenioNome = [[NSMutableArray alloc]initWithObjects:@"ALIANZ",@"AMIL",@"AMIL BLUE", @"BRADESCO", @"CARE PLUS", @"DIX AMIL", @"INTERMEDICA", @"GAMA SAUDE",@"GOLDEN CROSS", @"GREEN LINE", @"ITAU",@"MARITIMA",@"MEDIAL",@"MED SERVICE",@"PORTO SEGURO", @"SUL AMERICA", nil];
     //com
     
-    _convenioImg= [[NSMutableArray alloc]initWithObjects:@"cimg01.png", @"cimg02.png", @"cimg03.png", @"cimg04.png", @"cimg05.png",@"cimg06.png", @"cimg07.png", @"cimg08.png", @"cimg09.png", @"cimg10.png", @"cimg11.png",@"cimg12.png", @"cimg13.png", @"cimg14.png",@"cimg15.png", @"cimg16.png",nil];
+    convenioImg= [[NSMutableArray alloc]initWithObjects:@"cimg01.png", @"cimg02.png", @"cimg03.png", @"cimg04.png", @"cimg05.png",@"cimg06.png", @"cimg07.png", @"cimg08.png", @"cimg09.png", @"cimg10.png", @"cimg11.png",@"cimg12.png", @"cimg13.png", @"cimg14.png",@"cimg15.png", @"cimg16.png",nil];
     // Dispose of any resources that can be recreated.
+    
+    
 }
+
 
 #pragma mark - Table view data source
 
@@ -47,30 +51,28 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return _convenioNome.count;
+    return convenioNome.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlanoCell" forIndexPath:indexPath];
-    
-    
-    PlanoTableCell *cellPlan = [tableView dequeueReusableCellWithIdentifier:@"PlanoCell" forIndexPath:indexPath];
-    
+    PlanoTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlanoCell" forIndexPath:indexPath];
     long row = [indexPath row];
-          
-        
+    
+   // [cell.imgPlano se]
+    
+    
     // Configure the cell...
     
     return cell;
 }
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
+
 
 /*
 // Override to support editing the table view.
