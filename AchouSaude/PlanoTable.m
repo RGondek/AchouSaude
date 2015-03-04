@@ -18,17 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
     UIEdgeInsets inset = UIEdgeInsetsMake(25, 0, 0, 0);
     self.tableView.contentInset = inset;
     
@@ -37,6 +26,11 @@
     
     convenioImg= [[NSMutableArray alloc]initWithObjects:@"cimg01.png", @"cimg02.png", @"cimg03.png", @"cimg04.png", @"cimg05.png",@"cimg06.png", @"cimg07.png", @"cimg08.png", @"cimg09.png", @"cimg10.png", @"cimg11.png",@"cimg12.png", @"cimg13.png", @"cimg14.png",@"cimg15.png", @"cimg16.png",nil];
     // Dispose of any resources that can be recreated.
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
     
     
 }
@@ -50,18 +44,20 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    
     // Return the number of rows in the section.
     return convenioNome.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Configure the cell...
+    
     PlanoTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlanoCell" forIndexPath:indexPath];
     long row = [indexPath row];
     
-   // [cell.imgPlano se]
-    
-    
-    // Configure the cell...
+    [cell.namePlano setText:convenioNome [row]];
+    [cell.imgPlano setImage:[UIImage imageNamed:convenioImg[row]]];
     
     return cell;
 }

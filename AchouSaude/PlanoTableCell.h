@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface PlanoTableCell : UITableViewCell
+
+
 @property (weak, nonatomic) IBOutlet UIImageView* imgPlano;
 @property (weak, nonatomic) IBOutlet UILabel* namePlano;
 
