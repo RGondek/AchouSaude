@@ -8,11 +8,14 @@
 
 #import <MapKit/MapKit.h>
 
-@interface Hospital : MKAnnotationView <MKAnnotation>
+@interface Hospital : NSObject
 
+@property NSString* name;
 @property NSString* address;
 @property NSMutableArray* convenios;
 @property NSArray* phone;
 @property NSArray* time;
+@property UIImage* image;
+@property CLLocationCoordinate2D coordinate;
 
 @end
