@@ -9,6 +9,7 @@
 #import "PlanoTable.h"
 #import "PlanoTableCell.h"
 #import "Hospital.h"
+#import "FirstViewController.h"
 
 @interface PlanoTable ()
 
@@ -16,7 +17,7 @@
 
 @implementation PlanoTable
 
-@synthesize convenioImg, convenioNome, hosp, hospitais;
+@synthesize convenioImg, convenioNome, hospit, hospitais;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,6 +34,31 @@
     
     convenioImg= [[NSMutableArray alloc]initWithObjects:@"cimg01.png", @"cimg02.png", @"cimg03.png", @"cimg04.png", @"cimg05.png",@"cimg06.png", @"cimg07.png", @"cimg08.png", @"cimg09.png", @"cimg10.png", @"cimg11.png",@"cimg12.png", @"cimg13.png", @"cimg14.png",@"cimg15.png", @"cimg16.png",nil];
     // Dispose of any resources that can be recreated.
+    
+    // Criação dos Dados
+    
+    NSArray *vetNome = [[NSArray alloc] initWithObjects:@"Albert Einstein", @"Albert Sabin", @"Hospital Alvorada", @"Hospital Bandeirantes", @"Hospital Beneficiência Portuguesa", nil];
+    NSArray *vetEnd = [[NSArray alloc] initWithObjects:@"Avenida Albert Einstein, 627 - Bairro: Morumbi -São Paulo", @"Rua Brigadeiro Gavião Peixoto, 123 - Bairro: Lapa - São Paulo", @"Avenida Min Gabriel Resende Passos, 550 - Bairro: Moema - São paulo", @"Rua Barão de Iguape, 209 - Bairro: Liberdade", @"Rua Maestro Cardim, 769 - Bela Vista - Bairro: Paraíso -São Paulo", nil];
+    NSArray *vetImg = [[NSArray alloc] initWithObjects:@"img01.png", @"img02.png", @"img03.png", @"img04.png", @"img05.png",@"img06.png",nil];
+    
+    NSMutableArray *convenioHosp = [[NSMutableArray alloc] init];
+    NSArray *convenios = @[@"Allianz",@"Care Plus", @"Golden Cross", @"Dix Amil", @"Medial", @"Marítima"];
+    [convenioHosp addObject:convenios];
+    convenios = @[@"Allianz",@"Bradesco",@"Golden Cross", @"Dix/Amil",@"Intermédica", @"Marítima"];
+    [convenioHosp addObject:convenios];
+    convenios = @[@"Allianz",@"Amil",@"Amil Blue",@"Bradesco",@"Golden Cross", @"Dix/Amil",@"Intermédica", @"Itaú",@"Marítima",@"Med Service", @"Sul América"];
+    [convenioHosp addObject:convenios];
+    convenios = @[@"Allianz",@"Amil",@"Bradesco",@"Care Plus",@"Golden Cross", @"Green Line",@"Marítima",@"Medial",@"Med Service",@"Porto Seguro", @"Sul América"];
+    [convenioHosp addObject:convenios];
+    convenios = @[@"Allianz",@"Gama Saúde",@"Golden Cross", @"Intermédica",@"Marítima",@"Medial",@"Med Service",@"Porto Seguro", @"Sul América"];
+    [convenioHosp addObject:convenios];
+    
+    hospitais = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < [vetNome count]; i++) {
+        hospit = [[Hospital alloc] initWithName:vetNome[i] andAddress:vetEnd[i] andPhone:@"98482397123" andTime:@"15h" andImage:vetImg[i] andConvenios:convenioHosp[i]];
+        [hospitais addObject:hospit];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -102,14 +128,29 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier]isEqualToString:@"showMap"]) {
+        [segue destinationViewController];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        long row = [indexPath row];
+        
+        FirstViewController *map = (FirstViewController *) segue.destinationViewController;
+        hospitais = [[NSMutableArray alloc] init];
+        map.hospitais = [[NSMutableArray alloc] init];
+        for (Hospital *hosp in hospitais) {
+            if ([[hosp convenios] containsObject:convenioNome[row]]) {
+                [map.hospitais addObject:hosp];
+            }
+        }
+    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end

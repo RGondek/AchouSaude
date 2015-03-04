@@ -44,32 +44,7 @@
     
     mapa.showsUserLocation = YES;
     [super viewDidLoad];
-    
-    // UserDefaults
-    // Criação dos Dados
-    
-    NSArray *vetNome = [[NSArray alloc] initWithObjects:@"ALBERT EINSTEIN", @"ALBERT SABIN", @"HOSPITAL ALVORADA", @"HOSPITAL BANDEIRANTES", @"HOSPITAL BENEFICIENCIA PORTUGUESA", nil];
-    NSArray *vetEnd = [[NSArray alloc] initWithObjects:@"Avenida Albert Einstein, 627 - Bairro: Morumbi -São Paulo", @"Rua Brigadeiro Gavião Peixoto, 123 - Bairro: Lapa - São Paulo", @"Avenida Min Gabriel Resende Passos, 550 - Bairro: Moema - São paulo", @"Rua Barão de Iguape, 209 - Bairro: Liberdade", @"Rua Maestro Cardim, 769 - Bela Vista - Bairro: Paraíso -São Paulo", nil];
-    NSArray *vetImg = [[NSArray alloc] initWithObjects:@"img01.png", @"img02.png", @"img03.png", @"img04.png", @"img05.png",@"img06.png",nil];
-    
-    NSMutableArray *convenioHosp = [[NSMutableArray alloc] init];
-    NSArray *convenios = @[@"Allianz",@"Care Plus", @"Golden Cross", @"Dix Amil", @"Medial", @"Marítima"];
-    [convenioHosp addObject:convenios];
-    convenios = @[@"Allianz",@"Bradesco",@"Golden Cross", @"Dix/Amil",@"Intermédica", @"Marítima"];
-    [convenioHosp addObject:convenios];
-    convenios = @[@"Allianz",@"Amil",@"Amil Blue",@"Bradesco",@"Golden Cross", @"Dix/Amil",@"Intermédica", @"Itaú",@"Marítima",@"Med Service", @"Sul América"];
-    [convenioHosp addObject:convenios];
-    convenios = @[@"Allianz",@"Amil",@"Bradesco",@"Care Plus",@"Golden Cross", @"Green Line",@"Marítima",@"Medial",@"Med Service",@"Porto Seguro", @"Sul América"];
-    [convenioHosp addObject:convenios];
-    convenios = @[@"Allianz",@"Gama Saúde",@"Golden Cross", @"Intermédica",@"Marítima",@"Medial",@"Med Service",@"Porto Seguro", @"Sul América"];
-    [convenioHosp addObject:convenios];
-    
-    hospitais = [[NSMutableArray alloc] init];
-    
-    for (int i = 0; i < [vetNome count]; i++) {
-        hospit = [[Hospital alloc] initWithName:vetNome[i] andAddress:vetEnd[i] andPhone:@"98482397123" andTime:@"15h" andImage:vetImg[i] andConvenios:convenioHosp[i]];
-        [hospitais addObject:hospit];
-    }
+
     for (Hospital *hosp in hospitais) {
         NSLog(@"End: %@", [hosp address]);
         CLGeocoder *geocoder = [[CLGeocoder alloc] init];

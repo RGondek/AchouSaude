@@ -15,6 +15,6 @@
 @property NSMutableArray *convenioImg;
 
 @property NSMutableArray *hospitais;
-@property Hospital *hosp;
+@property Hospital *hospit;
 
 @end
