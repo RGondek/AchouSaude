@@ -12,6 +12,15 @@
 
 @synthesize name, phone, address, time, convenios, image, coordinate;
 
+static Hospital *_instance = nil;
+
++(Hospital*) instanceWithName:(NSString *)nome andAddress:(NSString *)add andPhone:(NSString *)phone andTime:(NSString *)time andImage:(NSString *)img{
+    if (_instance == nil) {
+        _instance = [[Hospital alloc] initWithName:nome andAddress:add andPhone:phone andTime:time andImage:img];
+    }
+    return _instance;
+}
+
 - (instancetype)initWithName:(NSString *)nome andAddress:(NSString *)end andPhone:(NSString *)tel andTime:(NSString *)hora andImage:(NSString *)img{
     self = [super init];
     

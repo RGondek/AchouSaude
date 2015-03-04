@@ -8,20 +8,37 @@
 
 #import "TableViewController.h"
 #import "TableViewCell.h"
+#import "Hospital.h"
 
 @interface TableViewController ()
 
 @end
 
-@implementation TableViewController
+@implementation TableViewController{
+    Hospital *hosp;
+}
 
-@synthesize vetEnd, convenios, convenioHosp;
+@synthesize vetEnd, convenios, convenioHosp, hospitais, vetImg, vetNome;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     UIEdgeInsets inset = UIEdgeInsetsMake(25, 0, 0, 0);
     self.tableView.contentInset = inset;
+    
+    vetNome = [[NSMutableArray alloc] initWithObjects:@"ALBERT EINSTEIN", @"ALBERT SABIN", @"HOSPITAL ALVORADA", @"HOSPITAL BANDEIRANTES", @"HOSPITAL BENEFICIENCIA PORTUGUESA", nil];
+    vetEnd = [[NSMutableArray alloc] initWithObjects:@"Avenida Albert Einstein, 627 - Bairro: Morumbi -São Paulo", @"Rua Brigadeiro Gavião Peixoto, 123 - Bairro: Lapa - São Paulo", @"Avenida Min Gabriel Resende Passos, 550 - Bairro: Moema - São paulo", @"Rua Barão de Iguape, 209 - Bairro: Liberdade", @"Rua Maestro Cardim, 769 - Bela Vista - Bairro: Paraíso -São Paulo", nil];
+    vetImg = [[NSMutableArray alloc] initWithObjects:@"img01.png", @"img02.png", @"img03.png", @"img04.png", @"img05.png",@"img06.png",nil];
+    
+    for (int i = 0; i < [vetNome count]; i++) {
+        hosp = [Hospital instanceWithName:vetNome[i] andAddress:vetEnd[i] andPhone:@"(11) 4446-7890" andTime:@"09:00 as 22:00" andImage:vetImg[i]];
+        [hospitais addObject:hosp];
+    }
+    
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    [user setValue:hospitais forKey:@"vetHospitais"];
+    [user synchronize];
+    
     
     convenioHosp = [[NSMutableArray alloc] init];
     convenios = @[@"ALIANZ",@"CARE PLUS", @"GOLDEN CROSS", @"DIX AMIL", @"MEDIAL", @"MARITIMA", @"VOLKSWAGEN"];
@@ -51,9 +68,9 @@
     self = [super init];
     
     if(self){
-        _vetNome = [[NSMutableArray alloc] initWithObjects:@"ALBERT EINSTEIN", @"ALBERT SABIN", @"HOSPITAL ALVORADA", @"HOSPITAL BANDEIRANTES", @"HOSPITAL BENEFICIENCIA PORTUGUESA", nil];
+        vetNome = [[NSMutableArray alloc] initWithObjects:@"ALBERT EINSTEIN", @"ALBERT SABIN", @"HOSPITAL ALVORADA", @"HOSPITAL BANDEIRANTES", @"HOSPITAL BENEFICIENCIA PORTUGUESA", nil];
         vetEnd = [[NSMutableArray alloc] initWithObjects:@"Avenida Albert Einstein, 627 - Bairro: Morumbi -São Paulo", @"Rua Brigadeiro Gavião Peixoto, 123 - Bairro: Lapa - São Paulo", @"Avenida Min Gabriel Resende Passos, 550 - Bairro: Moema - São paulo", @"Rua Barão de Iguape, 209 - Bairro: Liberdade", @"Rua Maestro Cardim, 769 - Bela Vista - Bairro: Paraíso -São Paulo", nil];
-        _vetImg = [[NSMutableArray alloc] initWithObjects:@"img01.png", @"img02.png", @"img03.png", @"img04.png", @"img05.png",@"img06.png",nil];
+        vetImg = [[NSMutableArray alloc] initWithObjects:@"img01.png", @"img02.png", @"img03.png", @"img04.png", @"img05.png",@"img06.png",nil];
     }
     return self;
 }
@@ -69,7 +86,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [_vetNome count];
+    return [vetNome count];
 }
 
 
@@ -79,8 +96,8 @@
     
     long row = [indexPath row];
     
-    [cell.lblNomeCell setText:_vetNome[row]];
-    [cell.imgCell setImage:[UIImage imageNamed:_vetImg[row]]];
+    [cell.lblNomeCell setText:vetNome[row]];
+    [cell.imgCell setImage:[UIImage imageNamed:vetImg[row]]];
     [cell.lblEndCell setText:vetEnd[row]];
     
     // Configure the cell...
@@ -101,9 +118,9 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [_vetNome removeObjectAtIndex:[indexPath row]];
+        [vetNome removeObjectAtIndex:[indexPath row]];
         [vetEnd removeObjectAtIndex:[indexPath row]];
-        [_vetImg removeObjectAtIndex:[indexPath row]];
+        [vetImg removeObjectAtIndex:[indexPath row]];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view

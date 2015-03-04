@@ -17,4 +17,6 @@
 @property NSMutableArray* convenioHosp;
 @property NSArray* convenios;
 
+@property NSMutableArray* hospitais;
+
 @end
