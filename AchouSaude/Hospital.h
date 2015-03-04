@@ -19,6 +19,8 @@
 @property UIImage* image;
 @property CLLocationCoordinate2D coordinate;
 
--(instancetype)initWithName:(NSString*)nome andAddress:(NSString*)add andPhone:(NSString*)phone andTime:(NSString*)time andImage:(NSString*)img;
++(Hospital*) instanceWithName:(NSString*)nome andAddress:(NSString*)add andPhone:(NSString*)phone andTime:(NSString*)time andImage:(NSString*)img;;
+
+-(instancetype) initWithName:(NSString*)nome andAddress:(NSString*)end andPhone:(NSString*)tel andTime:(NSString*)hora andImage:(NSString*)img;
 
 @end
