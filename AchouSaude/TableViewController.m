@@ -26,32 +26,6 @@
     UIEdgeInsets inset = UIEdgeInsetsMake(25, 0, 0, 0);
     self.tableView.contentInset = inset;
     
-    vetNome = [[NSMutableArray alloc] initWithObjects:@"ALBERT EINSTEIN", @"ALBERT SABIN", @"HOSPITAL ALVORADA", @"HOSPITAL BANDEIRANTES", @"HOSPITAL BENEFICIENCIA PORTUGUESA", nil];
-    vetEnd = [[NSMutableArray alloc] initWithObjects:@"Avenida Albert Einstein, 627 - Bairro: Morumbi -São Paulo", @"Rua Brigadeiro Gavião Peixoto, 123 - Bairro: Lapa - São Paulo", @"Avenida Min Gabriel Resende Passos, 550 - Bairro: Moema - São paulo", @"Rua Barão de Iguape, 209 - Bairro: Liberdade", @"Rua Maestro Cardim, 769 - Bela Vista - Bairro: Paraíso -São Paulo", nil];
-    vetImg = [[NSMutableArray alloc] initWithObjects:@"img01.png", @"img02.png", @"img03.png", @"img04.png", @"img05.png",@"img06.png",nil];
-    
-    for (int i = 0; i < [vetNome count]; i++) {
-        hosp = [Hospital instanceWithName:vetNome[i] andAddress:vetEnd[i] andPhone:@"(11) 4446-7890" andTime:@"09:00 as 22:00" andImage:vetImg[i]];
-        [hospitais addObject:hosp];
-    }
-    
-    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-    [user setValue:hospitais forKey:@"vetHospitais"];
-    [user synchronize];
-    
-    
-    convenioHosp = [[NSMutableArray alloc] init];
-    convenios = @[@"ALIANZ",@"CARE PLUS", @"GOLDEN CROSS", @"DIX AMIL", @"MEDIAL", @"MARITIMA", @"VOLKSWAGEN"];
-    [convenioHosp addObject:convenios];
-    convenios = @[@"ALIANZ",@"BRADESCO",@"GOLDEN CROSS", @"DIX/AMIL",@"INTERMEDICA", @"MARITIMA", @"VOLKSWAGEN"];
-    [convenioHosp addObject:convenios];
-    convenios = @[@"ALIANZ",@"AMIL",@"AMIL BLUE",@"BRADESCO",@"GOLDEN CROSS", @"DIX/AMIL",@"INTERMEDICA", @"ITAU",@"MARITIMA",@"MED SERVICE", @"SUL AMERICA",@"VOLKSWAGEN"];
-    [convenioHosp addObject:convenios];
-    convenios = @[@"ALIANZ",@"AMIL",@"BRADESCO",@"CARE PLUS",@"GOLDEN CROSS", @"GREEN LINE",@"MARITIMA",@"MEDIAL",@"MED SERVICE",@"PORTO SEGURO", @"SUL AMERICA",@"VOLKSWAGEN"];
-    [convenioHosp addObject:convenios];
-    convenios = @[@"ALIANZ",@"GAMA SAUDE",@"GOLDEN CROSS", @"INTERMEDICA",@"MARITIMA",@"MEDIAL",@"MED SERVICE",@"PORTO SEGURO", @"SUL AMERICA",@"VOLKSWAGEN"];
-    [convenioHosp addObject:convenios];
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

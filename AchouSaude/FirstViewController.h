@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "Hospital.h"
 
 @interface FirstViewController : UIViewController <CLLocationManagerDelegate>
 
 @property NSMutableArray *matchingItems;
 @property NSMutableArray *annot;
+
+@property NSMutableArray *hospitais;
+@property Hospital *hospit;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapa;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *detalheTipoMapa;

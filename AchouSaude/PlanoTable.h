@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Hospital.h"
 
 @interface PlanoTable : UITableViewController
 
 @property NSMutableArray *convenioNome;
 @property NSMutableArray *convenioImg;
+
+@property NSMutableArray *hospitais;
+@property Hospital *hosp;
 
 @end

@@ -10,6 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 #import "TableViewController.h"
+#import "Hospital.h"
 
 @interface FirstViewController ()
 
@@ -17,7 +18,7 @@
 
 @implementation FirstViewController
 
-@synthesize gerenciadorDeLocalizacao, mapa, botaoMinhaLocalizacao, detalheTipoMapa;
+@synthesize gerenciadorDeLocalizacao, mapa, botaoMinhaLocalizacao, detalheTipoMapa, hospitais, hospit;
 
 - (void)viewDidLoad {
     [botaoMinhaLocalizacao.layer setBorderColor: [UIColor colorWithRed:0 green:0.4 blue:1 alpha:1].CGColor];
@@ -44,9 +45,48 @@
     mapa.showsUserLocation = YES;
     [super viewDidLoad];
     
+    // UserDefaults
+    // Criação dos Dados
     
+    NSArray *vetNome = [[NSArray alloc] initWithObjects:@"ALBERT EINSTEIN", @"ALBERT SABIN", @"HOSPITAL ALVORADA", @"HOSPITAL BANDEIRANTES", @"HOSPITAL BENEFICIENCIA PORTUGUESA", nil];
+    NSArray *vetEnd = [[NSArray alloc] initWithObjects:@"Avenida Albert Einstein, 627 - Bairro: Morumbi -São Paulo", @"Rua Brigadeiro Gavião Peixoto, 123 - Bairro: Lapa - São Paulo", @"Avenida Min Gabriel Resende Passos, 550 - Bairro: Moema - São paulo", @"Rua Barão de Iguape, 209 - Bairro: Liberdade", @"Rua Maestro Cardim, 769 - Bela Vista - Bairro: Paraíso -São Paulo", nil];
+    NSArray *vetImg = [[NSArray alloc] initWithObjects:@"img01.png", @"img02.png", @"img03.png", @"img04.png", @"img05.png",@"img06.png",nil];
     
-
+    NSMutableArray *convenioHosp = [[NSMutableArray alloc] init];
+    NSArray *convenios = @[@"ALIANZ",@"CARE PLUS", @"GOLDEN CROSS", @"DIX AMIL", @"MEDIAL", @"MARITIMA", @"VOLKSWAGEN"];
+    [convenioHosp addObject:convenios];
+    convenios = @[@"ALIANZ",@"BRADESCO",@"GOLDEN CROSS", @"DIX/AMIL",@"INTERMEDICA", @"MARITIMA", @"VOLKSWAGEN"];
+    [convenioHosp addObject:convenios];
+    convenios = @[@"ALIANZ",@"AMIL",@"AMIL BLUE",@"BRADESCO",@"GOLDEN CROSS", @"DIX/AMIL",@"INTERMEDICA", @"ITAU",@"MARITIMA",@"MED SERVICE", @"SUL AMERICA",@"VOLKSWAGEN"];
+    [convenioHosp addObject:convenios];
+    convenios = @[@"ALIANZ",@"AMIL",@"BRADESCO",@"CARE PLUS",@"GOLDEN CROSS", @"GREEN LINE",@"MARITIMA",@"MEDIAL",@"MED SERVICE",@"PORTO SEGURO", @"SUL AMERICA",@"VOLKSWAGEN"];
+    [convenioHosp addObject:convenios];
+    convenios = @[@"ALIANZ",@"GAMA SAUDE",@"GOLDEN CROSS", @"INTERMEDICA",@"MARITIMA",@"MEDIAL",@"MED SERVICE",@"PORTO SEGURO", @"SUL AMERICA",@"VOLKSWAGEN"];
+    [convenioHosp addObject:convenios];
+    
+    hospitais = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < [vetNome count]; i++) {
+        hospit = [[Hospital alloc] initWithName:vetNome[i] andAddress:vetEnd[i] andPhone:@"98482397123" andTime:@"15h" andImage:vetImg[i] andConvenios:convenioHosp[i]];
+        [hospitais addObject:hospit];
+    }
+    for (Hospital *hosp in hospitais) {
+        NSLog(@"End: %@", [hosp address]);
+        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+        [geocoder geocodeAddressString:[hosp address] completionHandler:^(NSArray *placemarks, NSError *error) {
+            if (error) {
+                NSLog(@"%@", error);
+            } else {
+                CLPlacemark *placemark = [placemarks lastObject];
+                MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
+                annotation.coordinate = placemark.location.coordinate;
+                annotation.title = [hosp name];
+                annotation.subtitle = [hosp time];
+                [mapa addAnnotation:annotation];
+            }
+        }];
+        NSLog(@"HOSPITAL: %@", [hosp name]);
+    }
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -56,27 +96,6 @@
     NSLog(@"Primeiro: %@", [locations lastObject]);
     
     // Insere Hospitais
-    
-    TableViewController* teste = [[TableViewController alloc] init];
-   
-  
-    for (NSString* end in teste.vetEnd) {
-        NSLog(@"End: %@", end);
-        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-        [geocoder geocodeAddressString:end completionHandler:^(NSArray *placemarks, NSError *error) {
-            if (error) {
-                NSLog(@"%@", error);
-            } else {
-                CLPlacemark *placemark = [placemarks lastObject];
-                MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
-                annotation.coordinate = placemark.location.coordinate;
-                annotation.title = [teste.vetNome objectAtIndex:[teste.vetEnd indexOfObject:end]];
-                NSLog(@"coord: %f, %f", annotation.coordinate.latitude, annotation.coordinate.longitude);
-                NSLog(@"title: %@", annotation.title);
-                [mapa addAnnotation:annotation];
-            }
-        }];
-    }
 
    [mapa setRegion:region animated:YES];
    [gerenciadorDeLocalizacao stopUpdatingLocation];
@@ -133,6 +152,8 @@
 
 
 - (IBAction)btnVoltar:(id)sender {
+    
+    
 }
 
 - (IBAction)minhaLocalizacao:(id)sender {

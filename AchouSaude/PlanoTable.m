@@ -8,25 +8,31 @@
 
 #import "PlanoTable.h"
 #import "PlanoTableCell.h"
+#import "Hospital.h"
 
 @interface PlanoTable ()
 
 @end
 
 @implementation PlanoTable
-@synthesize convenioImg, convenioNome;
+
+@synthesize convenioImg, convenioNome, hosp, hospitais;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIEdgeInsets inset = UIEdgeInsetsMake(25, 0, 0, 0);
     self.tableView.contentInset = inset;
     
+    
+//    NSArray *Teste = [[NSArray alloc]initWithArray:hospitais];
+//    [[NSUserDefaults standardUserDefaults] setObject:Teste forKey:@"vetHospitais"];
+//    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     convenioNome = [[NSMutableArray alloc]initWithObjects:@"Allianz",@"Amil",@"AMIL BLUE", @"BRADESCO", @"CARE PLUS", @"DIX AMIL", @"INTERMEDICA", @"GAMA SAUDE",@"GOLDEN CROSS", @"GREEN LINE", @"ITAU",@"MARITIMA",@"MEDIAL",@"MED SERVICE",@"PORTO SEGURO", @"SUL AMERICA", nil];
     //com
     
     convenioImg= [[NSMutableArray alloc]initWithObjects:@"cimg01.png", @"cimg02.png", @"cimg03.png", @"cimg04.png", @"cimg05.png",@"cimg06.png", @"cimg07.png", @"cimg08.png", @"cimg09.png", @"cimg10.png", @"cimg11.png",@"cimg12.png", @"cimg13.png", @"cimg14.png",@"cimg15.png", @"cimg16.png",nil];
     // Dispose of any resources that can be recreated.
-    
 }
 
 - (void)didReceiveMemoryWarning {
