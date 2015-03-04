@@ -108,16 +108,27 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bLX-c6-PJO" id="qDs-SF-lAj">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FiZ-8y-wJu">
-                                            <rect key="frame" x="14" y="8" width="143" height="75"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FiZ-8y-wJu">
+                                            <rect key="frame" x="8" y="8" width="100" height="75"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="75" id="HLf-du-Opb"/>
+                                                <constraint firstAttribute="width" constant="100" id="VH0-na-rA8"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="84" placeholderIntrinsicHeight="24" text="Convenio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OxW-RK-d1R">
-                                            <rect key="frame" x="258" y="26" width="84" height="24"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="84" placeholderIntrinsicHeight="24" text="Convenio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OxW-RK-d1R">
+                                            <rect key="frame" x="113" y="33" width="479" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="FiZ-8y-wJu" firstAttribute="leading" secondItem="qDs-SF-lAj" secondAttribute="leadingMargin" id="2J0-i9-fQj"/>
+                                        <constraint firstItem="OxW-RK-d1R" firstAttribute="leading" secondItem="FiZ-8y-wJu" secondAttribute="trailing" constant="5" id="MX3-qQ-UPw"/>
+                                        <constraint firstItem="OxW-RK-d1R" firstAttribute="trailing" secondItem="qDs-SF-lAj" secondAttribute="trailingMargin" id="ZNo-j0-NXa"/>
+                                        <constraint firstAttribute="centerY" secondItem="FiZ-8y-wJu" secondAttribute="centerY" id="kim-ES-fBm"/>
+                                        <constraint firstAttribute="centerY" secondItem="OxW-RK-d1R" secondAttribute="centerY" id="zMe-oB-O9w"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="imgPlano" destination="FiZ-8y-wJu" id="pm5-aZ-vx5"/>

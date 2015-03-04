@@ -21,7 +21,7 @@
     UIEdgeInsets inset = UIEdgeInsetsMake(25, 0, 0, 0);
     self.tableView.contentInset = inset;
     
-    convenioNome = [[NSMutableArray alloc]initWithObjects:@"ALIANZ",@"AMIL",@"AMIL BLUE", @"BRADESCO", @"CARE PLUS", @"DIX AMIL", @"INTERMEDICA", @"GAMA SAUDE",@"GOLDEN CROSS", @"GREEN LINE", @"ITAU",@"MARITIMA",@"MEDIAL",@"MED SERVICE",@"PORTO SEGURO", @"SUL AMERICA", nil];
+    convenioNome = [[NSMutableArray alloc]initWithObjects:@"Allianz",@"Amil",@"AMIL BLUE", @"BRADESCO", @"CARE PLUS", @"DIX AMIL", @"INTERMEDICA", @"GAMA SAUDE",@"GOLDEN CROSS", @"GREEN LINE", @"ITAU",@"MARITIMA",@"MEDIAL",@"MED SERVICE",@"PORTO SEGURO", @"SUL AMERICA", nil];
     //com
     
     convenioImg= [[NSMutableArray alloc]initWithObjects:@"cimg01.png", @"cimg02.png", @"cimg03.png", @"cimg04.png", @"cimg05.png",@"cimg06.png", @"cimg07.png", @"cimg08.png", @"cimg09.png", @"cimg10.png", @"cimg11.png",@"cimg12.png", @"cimg13.png", @"cimg14.png",@"cimg15.png", @"cimg16.png",nil];
