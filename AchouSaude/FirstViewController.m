@@ -53,15 +53,15 @@
     NSArray *vetImg = [[NSArray alloc] initWithObjects:@"img01.png", @"img02.png", @"img03.png", @"img04.png", @"img05.png",@"img06.png",nil];
     
     NSMutableArray *convenioHosp = [[NSMutableArray alloc] init];
-    NSArray *convenios = @[@"ALIANZ",@"CARE PLUS", @"GOLDEN CROSS", @"DIX AMIL", @"MEDIAL", @"MARITIMA", @"VOLKSWAGEN"];
+    NSArray *convenios = @[@"Allianz",@"Care Plus", @"Golden Cross", @"Dix Amil", @"Medial", @"Marítima"];
     [convenioHosp addObject:convenios];
-    convenios = @[@"ALIANZ",@"BRADESCO",@"GOLDEN CROSS", @"DIX/AMIL",@"INTERMEDICA", @"MARITIMA", @"VOLKSWAGEN"];
+    convenios = @[@"Allianz",@"Bradesco",@"Golden Cross", @"Dix/Amil",@"Intermédica", @"Marítima"];
     [convenioHosp addObject:convenios];
-    convenios = @[@"ALIANZ",@"AMIL",@"AMIL BLUE",@"BRADESCO",@"GOLDEN CROSS", @"DIX/AMIL",@"INTERMEDICA", @"ITAU",@"MARITIMA",@"MED SERVICE", @"SUL AMERICA",@"VOLKSWAGEN"];
+    convenios = @[@"Allianz",@"Amil",@"Amil Blue",@"Bradesco",@"Golden Cross", @"Dix/Amil",@"Intermédica", @"Itaú",@"Marítima",@"Med Service", @"Sul América"];
     [convenioHosp addObject:convenios];
-    convenios = @[@"ALIANZ",@"AMIL",@"BRADESCO",@"CARE PLUS",@"GOLDEN CROSS", @"GREEN LINE",@"MARITIMA",@"MEDIAL",@"MED SERVICE",@"PORTO SEGURO", @"SUL AMERICA",@"VOLKSWAGEN"];
+    convenios = @[@"Allianz",@"Amil",@"Bradesco",@"Care Plus",@"Golden Cross", @"Green Line",@"Marítima",@"Medial",@"Med Service",@"Porto Seguro", @"Sul América"];
     [convenioHosp addObject:convenios];
-    convenios = @[@"ALIANZ",@"GAMA SAUDE",@"GOLDEN CROSS", @"INTERMEDICA",@"MARITIMA",@"MEDIAL",@"MED SERVICE",@"PORTO SEGURO", @"SUL AMERICA",@"VOLKSWAGEN"];
+    convenios = @[@"Allianz",@"Gama Saúde",@"Golden Cross", @"Intermédica",@"Marítima",@"Medial",@"Med Service",@"Porto Seguro", @"Sul América"];
     [convenioHosp addObject:convenios];
     
     hospitais = [[NSMutableArray alloc] init];

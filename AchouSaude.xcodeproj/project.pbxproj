@@ -201,11 +201,11 @@
 				TargetAttributes = {
 					D5198D8C1A9FB30000EC3C5C = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 7YCYVAN8PU;
+						DevelopmentTeam = PWHZ7MYK3K;
 					};
 					D5198DA81A9FB30000EC3C5C = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 7YCYVAN8PU;
+						DevelopmentTeam = PWHZ7MYK3K;
 						TestTargetID = D5198D8C1A9FB30000EC3C5C;
 					};
 				};
