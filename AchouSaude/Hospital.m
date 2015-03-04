@@ -10,7 +10,7 @@
 
 @implementation Hospital
 
-@synthesize title, image, address, convenios, phone, time, coordinate;
+@synthesize name, image, address, convenios, phone, time, coordinate;
 
 /*
 // Only override drawRect: if you perform custom drawing.
