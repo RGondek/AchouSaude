@@ -54,9 +54,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlanoCell" forIndexPath:indexPath];
     
     
-   
+    PlanoTableCell *cellPlan = [tableView dequeueReusableCellWithIdentifier:@"PlanoCell" forIndexPath:indexPath];
     
-    
+    long row = [indexPath row];
+          
+        
     // Configure the cell...
     
     return cell;
