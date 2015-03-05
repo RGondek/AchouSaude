@@ -10,6 +10,8 @@
 #import "TableViewCell.h"
 #import "Hospital.h"
 
+#import "FirstViewController.h"
+
 @interface TableViewController ()
 
 @end
@@ -25,6 +27,7 @@
     
     UIEdgeInsets inset = UIEdgeInsetsMake(25, 0, 0, 0);
     self.tableView.contentInset = inset;
+
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -105,14 +108,28 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
+
+- (IBAction)selectRow:(id)sender {
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    long row = [indexPath row];
+    
+    FirstViewController *map = [[super tabBarController].viewControllers objectAtIndex:0];
+    
+    map.selectedHosp = [hospitais objectAtIndex:row];
+    map.selected = YES;
+    
+    [[super tabBarController] setSelectedIndex:0];
+
+}
 
 @end

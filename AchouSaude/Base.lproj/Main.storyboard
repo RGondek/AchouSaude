@@ -179,11 +179,12 @@
                                         <constraint firstItem="cb4-vf-4uX" firstAttribute="leading" secondItem="mvK-xY-F1C" secondAttribute="leadingMargin" id="xZf-Kf-XQz"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="imgCell" destination="cb4-vf-4uX" id="php-ih-VZx"/>
                                     <outlet property="lblEndCell" destination="dcQ-Oo-oz9" id="Mtx-tv-qDd"/>
                                     <outlet property="lblNomeCell" destination="IIN-8E-J6R" id="QyP-Sa-NYe"/>
-                                    <segue destination="9pv-A4-QxB" kind="show" id="lFQ-gF-VgT"/>
+                                    <outletCollection property="gestureRecognizers" destination="ET3-21-kJc" appends="YES" id="GKU-Af-PU2"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -195,6 +196,11 @@
                     <tabBarItem key="tabBarItem" systemItem="mostViewed" id="SVr-oN-LDc"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vjE-4w-2E5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ET3-21-kJc">
+                    <connections>
+                        <action selector="selectRow:" destination="oEn-AY-8aa" id="bNZ-6n-Ao6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="997" y="144"/>
         </scene>
@@ -221,7 +227,4 @@
     <resources>
         <image name="first" width="30" height="30"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="u7Y-xg-7CH"/>
-    </inferredMetricsTieBreakers>
 </document>

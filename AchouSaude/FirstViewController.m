@@ -18,7 +18,7 @@
 
 @implementation FirstViewController
 
-@synthesize gerenciadorDeLocalizacao, mapa, botaoMinhaLocalizacao, detalheTipoMapa, hospitais, hospit;
+@synthesize gerenciadorDeLocalizacao, mapa, botaoMinhaLocalizacao, detalheTipoMapa, hospitais, hospit, selected, selectedCoord, selectedHosp, annot;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -45,7 +45,9 @@
     }
     
     mapa.showsUserLocation = YES;
-
+    
+    annot = [[NSMutableArray alloc] init];
+    
     for (Hospital *hosp in hospitais) {
         CLGeocoder *geocoder = [[CLGeocoder alloc] init];
         [geocoder geocodeAddressString:[hosp address] completionHandler:^(NSArray *placemarks, NSError *error) {
@@ -58,10 +60,24 @@
                 annotation.title = [hosp name];
                 annotation.subtitle = [hosp time];
                 [mapa addAnnotation:annotation];
+                [annot addObject:annotation];
             }
         }];
     }
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    if (selected) {
+        for (MKPointAnnotation *annotation in annot) {
+            if ([selectedHosp name] == annotation.title) {
+                selectedCoord = annotation.coordinate;
+            }
+        }
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(selectedCoord, 500, 500);
+        [mapa setRegion:region animated:YES];
+    }
+    selected = NO;
 }
 
 - (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
@@ -86,9 +102,10 @@
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     CLLocationCoordinate2D coord = [[locations lastObject]coordinate];
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 150, 150);
-   [mapa setRegion:region animated:YES];
-   [gerenciadorDeLocalizacao stopUpdatingLocation];
+    if (selected) { coord = selectedCoord; }
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 500, 500);
+    [mapa setRegion:region animated:YES];
+    [gerenciadorDeLocalizacao stopUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning {
