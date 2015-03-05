@@ -21,6 +21,8 @@
 @synthesize gerenciadorDeLocalizacao, mapa, botaoMinhaLocalizacao, detalheTipoMapa, hospitais, hospit;
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
+    mapa.delegate = self;
     [botaoMinhaLocalizacao.layer setBorderColor: [UIColor colorWithRed:0 green:0.4 blue:1 alpha:1].CGColor];
     [botaoMinhaLocalizacao.layer setBorderWidth:1.0f];
     [botaoMinhaLocalizacao.layer setCornerRadius:5.0f];
@@ -43,7 +45,6 @@
     }
     
     mapa.showsUserLocation = YES;
-    [super viewDidLoad];
 
     for (Hospital *hosp in hospitais) {
         CLGeocoder *geocoder = [[CLGeocoder alloc] init];
@@ -61,6 +62,26 @@
         }];
     }
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {
+        return nil;
+    }
+    
+    if ([annotation isKindOfClass:[MKPointAnnotation class]]) {
+        MKAnnotationView *pinView = (MKAnnotationView*) [mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+        if (!pinView) {
+            pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
+            pinView.canShowCallout = YES;
+            pinView.image = [UIImage imageNamed:@"hospIcon.png"];
+            pinView.calloutOffset = CGPointMake(0, 32);
+        } else {
+            pinView.annotation = annotation;
+        }
+        return pinView;
+    }
+    return nil;
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
