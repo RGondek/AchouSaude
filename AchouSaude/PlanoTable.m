@@ -139,7 +139,8 @@
         
         long row = [indexPath row];
         
-        FirstViewController *map = (FirstViewController *) segue.destinationViewController;
+        //UITabBarController *tab = (UITabBarController *) segue.destinationViewController;
+        FirstViewController *map = (UITabBarController *)[[segue.destinationViewController viewControllers] objectAtIndex:0];
         NSMutableArray *hospPlano = [[NSMutableArray alloc] init];
         for (Hospital *hosp in hospitais) {
             if ([[hosp convenios] containsObject:convenioNome[row]]) {
