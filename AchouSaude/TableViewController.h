@@ -7,15 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Hospital.h"
 
 @interface TableViewController : UITableViewController
-
-@property NSMutableArray* vetNome;
-@property NSMutableArray* vetImg;
-@property NSMutableArray* vetEnd;
-
-@property NSMutableArray* convenioHosp;
-@property NSArray* convenios;
 
 @property NSMutableArray* hospitais;
 
