@@ -18,7 +18,7 @@
     Hospital *hosp;
 }
 
-@synthesize vetEnd, convenios, convenioHosp, hospitais, vetImg, vetNome;
+@synthesize hospitais;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,17 +38,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(instancetype)init{
-    self = [super init];
-    
-    if(self){
-        vetNome = [[NSMutableArray alloc] initWithObjects:@"ALBERT EINSTEIN", @"ALBERT SABIN", @"HOSPITAL ALVORADA", @"HOSPITAL BANDEIRANTES", @"HOSPITAL BENEFICIENCIA PORTUGUESA", nil];
-        vetEnd = [[NSMutableArray alloc] initWithObjects:@"Avenida Albert Einstein, 627 - Bairro: Morumbi -São Paulo", @"Rua Brigadeiro Gavião Peixoto, 123 - Bairro: Lapa - São Paulo", @"Avenida Min Gabriel Resende Passos, 550 - Bairro: Moema - São paulo", @"Rua Barão de Iguape, 209 - Bairro: Liberdade", @"Rua Maestro Cardim, 769 - Bela Vista - Bairro: Paraíso -São Paulo", nil];
-        vetImg = [[NSMutableArray alloc] initWithObjects:@"img01.png", @"img02.png", @"img03.png", @"img04.png", @"img05.png",@"img06.png",nil];
-    }
-    return self;
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -60,7 +49,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [vetNome count];
+    return [hospitais count];
 }
 
 
@@ -70,9 +59,10 @@
     
     long row = [indexPath row];
     
-    [cell.lblNomeCell setText:vetNome[row]];
-    [cell.imgCell setImage:[UIImage imageNamed:vetImg[row]]];
-    [cell.lblEndCell setText:vetEnd[row]];
+    hosp = [hospitais objectAtIndex:row];
+    [cell.lblNomeCell setText:[hosp name]];
+    [cell.imgCell setImage:[hosp image]];
+    [cell.lblEndCell setText:[hosp address]];
     
     // Configure the cell...
     
@@ -89,17 +79,17 @@
 
 
 // Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [vetNome removeObjectAtIndex:[indexPath row]];
-        [vetEnd removeObjectAtIndex:[indexPath row]];
-        [vetImg removeObjectAtIndex:[indexPath row]];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//        // Delete the row from the data source
+////        [vetNome removeObjectAtIndex:[indexPath row]];
+////        [vetEnd removeObjectAtIndex:[indexPath row]];
+////        [vetImg removeObjectAtIndex:[indexPath row]];
+////        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+//    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//    }   
+//}
 
 /*
 // Override to support rearranging the table view.

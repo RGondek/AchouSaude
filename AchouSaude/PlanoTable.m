@@ -10,6 +10,7 @@
 #import "PlanoTableCell.h"
 #import "Hospital.h"
 #import "FirstViewController.h"
+#import "TableViewController.h"
 
 @interface PlanoTable ()
 
@@ -141,6 +142,8 @@
         
         //UITabBarController *tab = (UITabBarController *) segue.destinationViewController;
         FirstViewController *map = [[segue.destinationViewController viewControllers] objectAtIndex:0];
+        TableViewController *list = [[segue.destinationViewController viewControllers] objectAtIndex:1];
+
         NSMutableArray *hospPlano = [[NSMutableArray alloc] init];
         for (Hospital *hosp in hospitais) {
             if ([[hosp convenios] containsObject:convenioNome[row]]) {
@@ -148,6 +151,7 @@
             }
         }
         map.hospitais = [[NSMutableArray alloc] initWithArray:hospPlano];
+        list.hospitais = [[NSMutableArray alloc] initWithArray:hospPlano];
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
