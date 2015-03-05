@@ -10,6 +10,8 @@
 #import "TableViewCell.h"
 #import "Hospital.h"
 
+#import "FirstViewController.h"
+
 @interface TableViewController ()
 
 @end
@@ -105,14 +107,24 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
+    long row = [indexPath row];
+    FirstViewController *map = [[segue destinationViewController] objectAtIndex:0];
+    
+//    map.selectedHosp = [hospitais objectAtIndex:row];
+    
+//    map.selected = YES;
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end
