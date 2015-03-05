@@ -21,15 +21,6 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pMX-Ny-wME">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXK-LO-6ux">
-                                <rect key="frame" x="16" y="20" width="39" height="30"/>
-                                <state key="normal" title="Voltar">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnVoltar:" destination="9pv-A4-QxB" eventType="touchUpInside" id="rPn-dF-jPI"/>
-                                </connections>
-                            </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="N5S-i2-emh">
                                 <rect key="frame" x="402" y="513" width="182" height="29"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -53,37 +44,28 @@
                                     <action selector="minhaLocalizacao:" destination="9pv-A4-QxB" eventType="touchUpInside" id="IeY-97-Ag9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ya1-Eg-UrJ">
+                                <rect key="frame" x="16" y="20" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="⏎">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="AXK-LO-6ux" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" id="3Gv-sq-2x6"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="AXK-LO-6ux" secondAttribute="trailing" constant="529" id="3fb-t2-664"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pMX-Ny-wME" secondAttribute="trailing" constant="-16" id="EjC-kx-xN7"/>
                             <constraint firstItem="pMX-Ny-wME" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="topMargin" id="JuL-Sg-Hck"/>
-                            <constraint firstItem="AXK-LO-6ux" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="LAr-Ye-A0M"/>
                             <constraint firstItem="Yvb-GJ-8zo" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-5" id="NkS-xM-uHa"/>
-                            <constraint firstItem="AXK-LO-6ux" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="RpL-hl-b6D"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="Yvb-GJ-8zo" secondAttribute="bottom" constant="8" id="UD3-hs-4kb"/>
-                            <constraint firstItem="AXK-LO-6ux" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="bbm-Ba-Yeb"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="pMX-Ny-wME" secondAttribute="bottom" id="eZt-R7-aP5"/>
                             <constraint firstItem="N5S-i2-emh" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="fim-ed-JYA"/>
-                            <constraint firstItem="AXK-LO-6ux" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="gKD-Ae-Bup"/>
-                            <constraint firstItem="AXK-LO-6ux" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="topMargin" id="k5N-4V-bZM"/>
                             <constraint firstItem="pMX-Ny-wME" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="pQG-G0-ABy"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="N5S-i2-emh" secondAttribute="bottom" constant="10" id="znC-el-mzW"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="3Gv-sq-2x6"/>
-                                <exclude reference="3fb-t2-664"/>
-                                <exclude reference="bbm-Ba-Yeb"/>
-                                <exclude reference="gKD-Ae-Bup"/>
-                                <exclude reference="k5N-4V-bZM"/>
-                            </mask>
-                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
-                    <navigationItem key="navigationItem" title="Title" id="tz8-Yv-12j"/>
+                    <navigationItem key="navigationItem" title="Title" id="1yd-Fz-aDF"/>
                     <connections>
                         <outlet property="botaoMinhaLocalizacao" destination="Yvb-GJ-8zo" id="iDa-Kw-AfF"/>
                         <outlet property="detalheTipoMapa" destination="N5S-i2-emh" id="vST-fj-WKj"/>
