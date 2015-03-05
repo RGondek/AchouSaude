@@ -46,7 +46,6 @@
     [super viewDidLoad];
 
     for (Hospital *hosp in hospitais) {
-        NSLog(@"End: %@", [hosp address]);
         CLGeocoder *geocoder = [[CLGeocoder alloc] init];
         [geocoder geocodeAddressString:[hosp address] completionHandler:^(NSArray *placemarks, NSError *error) {
             if (error) {
@@ -60,7 +59,6 @@
                 [mapa addAnnotation:annotation];
             }
         }];
-        NSLog(@"HOSPITAL: %@", [hosp name]);
     }
     // Do any additional setup after loading the view, typically from a nib.
 }
