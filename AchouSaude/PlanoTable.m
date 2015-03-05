@@ -58,7 +58,6 @@
     for (int i = 0; i < [vetNome count]; i++) {
         hospit = [[Hospital alloc] initWithName:vetNome[i] andAddress:vetEnd[i] andPhone:@"98482397123" andTime:@"15h" andImage:vetImg[i] andConvenios:convenioHosp[i]];
         [hospitais addObject:hospit];
-        NSLog(@"Teste %d", i);
     }
 }
 
