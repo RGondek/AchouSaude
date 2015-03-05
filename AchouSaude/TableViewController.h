@@ -12,5 +12,6 @@
 @interface TableViewController : UITableViewController
 
 @property NSMutableArray* hospitais;
+- (IBAction)selectRow:(id)sender;
 
 @end
