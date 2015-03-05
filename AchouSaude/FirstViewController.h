@@ -23,9 +23,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *botaoMinhaLocalizacao;
 @property (strong, retain) CLLocationManager *gerenciadorDeLocalizacao;
 
-- (IBAction)btnVoltar:(id)sender;
 - (IBAction)tipoMapa:(id)sender;
 - (IBAction)minhaLocalizacao:(id)sender;
+- (IBAction)btnVoltar:(id)sender;
 
 
 @end

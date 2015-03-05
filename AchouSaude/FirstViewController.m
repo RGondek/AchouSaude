@@ -120,10 +120,6 @@
 }
 
 
-- (IBAction)btnVoltar:(id)sender {
-    
-    
-}
 
 - (IBAction)minhaLocalizacao:(id)sender {
     gerenciadorDeLocalizacao = [[CLLocationManager alloc] init];
@@ -132,4 +128,7 @@
     [gerenciadorDeLocalizacao startUpdatingLocation];
 }
 
+- (IBAction)btnVoltar:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end
