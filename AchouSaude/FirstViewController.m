@@ -68,10 +68,6 @@
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     CLLocationCoordinate2D coord = [[locations lastObject]coordinate];
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 150, 150);
-    NSLog(@"Primeiro: %@", [locations lastObject]);
-    
-    // Insere Hospitais
-
    [mapa setRegion:region animated:YES];
    [gerenciadorDeLocalizacao stopUpdatingLocation];
 }

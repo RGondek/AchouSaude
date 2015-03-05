@@ -58,6 +58,7 @@
     for (int i = 0; i < [vetNome count]; i++) {
         hospit = [[Hospital alloc] initWithName:vetNome[i] andAddress:vetEnd[i] andPhone:@"98482397123" andTime:@"15h" andImage:vetImg[i] andConvenios:convenioHosp[i]];
         [hospitais addObject:hospit];
+        NSLog(@"Teste %d", i);
     }
 }
 
@@ -140,13 +141,13 @@
         long row = [indexPath row];
         
         FirstViewController *map = (FirstViewController *) segue.destinationViewController;
-        hospitais = [[NSMutableArray alloc] init];
-        map.hospitais = [[NSMutableArray alloc] init];
+        NSMutableArray *hospPlano = [[NSMutableArray alloc] init];
         for (Hospital *hosp in hospitais) {
             if ([[hosp convenios] containsObject:convenioNome[row]]) {
-                [map.hospitais addObject:hosp];
+                [hospPlano addObject:hosp];
             }
         }
+        map.hospitais = [[NSMutableArray alloc] initWithArray:hospPlano];
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
