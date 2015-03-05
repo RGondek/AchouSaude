@@ -67,6 +67,7 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+
 -(void)viewDidAppear:(BOOL)animated{
     if (selected) {
         for (MKPointAnnotation *annotation in annot) {
@@ -91,7 +92,14 @@
             pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
             pinView.canShowCallout = YES;
             pinView.image = [UIImage imageNamed:@"hospIcon.png"];
-            pinView.calloutOffset = CGPointMake(0, 32);
+            pinView.calloutOffset = CGPointMake(0, 5);
+            
+            //            UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            //            pinView.rightCalloutAccessoryView = rightButton;
+            //
+            UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hospIcon.png"]];
+            pinView.leftCalloutAccessoryView = iconView;
+            pinView.leftCalloutAccessoryView.center = CGPointMake(0, 20);
         } else {
             pinView.annotation = annotation;
         }
