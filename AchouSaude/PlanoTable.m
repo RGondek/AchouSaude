@@ -33,7 +33,7 @@
     convenioNome = [[NSMutableArray alloc]initWithObjects:@"Allianz",@"Amil",@"Amil Blue", @"Bradesco", @"Care Plus", @"Dix/Amil", @"Intermédica", @"Gama Saúde",@"Golden Cross", @"Green Line", @"Itaú",@"Marítima",@"Medial",@"Med Service",@"Porto Seguro", @"Sul América", @"Unimed Paulistana", @"Unimed Seguros",nil];
     //com
     
-    convenioImg= [[NSMutableArray alloc]initWithObjects:@"cimg01.png", @"cimg02.png", @"cimg03.png", @"cimg04.png", @"cimg05.png",@"cimg06.png", @"cimg07.png", @"cimg08.png", @"cimg09.png", @"cimg10.png", @"cimg11.png",@"cimg12.png", @"cimg13.png", @"cimg14.png",@"cimg15.png", @"cimg16.png", @"cimg17.png", nil];
+    convenioImg= [[NSMutableArray alloc]initWithObjects:@"cimg01.png", @"cimg02.png", @"cimg03.png", @"cimg04.png", @"cimg05.png",@"cimg06.png", @"cimg07.png", @"cimg08.png", @"cimg09.png", @"cimg10.png", @"cimg11.png",@"cimg12.png", @"cimg13.png", @"cimg14.png",@"cimg15.png", @"cimg16.png", @"cimg17.png",@"cimg18.png", nil];
     // Dispose of any resources that can be recreated.
     
     // Criação dos Dados
