@@ -18,7 +18,7 @@
 
 @implementation FirstViewController
 
-@synthesize gerenciadorDeLocalizacao, mapa, botaoMinhaLocalizacao, detalheTipoMapa, hospitais, hospit, selected, selectedCoord, selectedHosp, annot;
+@synthesize gerenciadorDeLocalizacao, mapa, botaoMinhaLocalizacao, detalheTipoMapa, hospitais, hospit, selected, selectedCoord, selectedHosp, annot, itemDestino, mapIt;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,7 +32,6 @@
     [detalheTipoMapa.layer setBorderWidth:1.0f];
     [detalheTipoMapa.layer setCornerRadius:5.0f];
     [detalheTipoMapa setClipsToBounds:YES];
-    
     
     gerenciadorDeLocalizacao = [[CLLocationManager alloc] init];
     [gerenciadorDeLocalizacao setDesiredAccuracy:kCLLocationAccuracyBest];
@@ -58,15 +57,17 @@
                 MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
                 annotation.coordinate = placemark.location.coordinate;
                 annotation.title = [hosp name];
-                annotation.subtitle = [hosp time];
+                annotation.subtitle = [hosp phone];
                 [mapa addAnnotation:annotation];
                 [annot addObject:annotation];
+                if (selectedHosp == hosp) {
+                    mapIt = [[MKMapItem alloc] initWithPlacemark:(MKPlacemark*)placemark];
+                }
             }
         }];
     }
     // Do any additional setup after loading the view, typically from a nib.
 }
-
 
 -(void)viewDidAppear:(BOOL)animated{
     if (selected) {
@@ -94,8 +95,10 @@
             pinView.image = [UIImage imageNamed:@"hospIcon.png"];
             pinView.calloutOffset = CGPointMake(0, 5);
             
-                        UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-                        pinView.rightCalloutAccessoryView = rightButton;
+            UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
+            [rightButton setTitle:@"Rota" forState:UIControlStateNormal];
+            [rightButton addTarget:self action:@selector(gerarRotaPara) forControlEvents:UIControlEventTouchUpInside];
+            pinView.rightCalloutAccessoryView = rightButton;
             
             UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hospIcon.png"]];
             pinView.leftCalloutAccessoryView = iconView;
@@ -148,10 +151,10 @@
 //
 //}
 
-- (void) gerarRota: (MKMapView*) origem para:(MKMapItem*) destino {
+- (void) gerarRotaPara{
     MKDirectionsRequest * request = [[MKDirectionsRequest alloc] init];
-    request.source = origem;
-    request.destination = destino;
+    request.source = [MKMapItem mapItemForCurrentLocation];
+    request.destination = mapIt;
     request.requestsAlternateRoutes = YES;
     MKDirections *directions = [[MKDirections alloc] initWithRequest:request];
     [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
@@ -194,7 +197,6 @@
         [mapa setMapType:MKMapTypeHybrid];
     }
 }
-
 
 
 - (IBAction)minhaLocalizacao:(id)sender {

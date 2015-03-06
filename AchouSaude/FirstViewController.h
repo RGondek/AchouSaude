@@ -21,6 +21,9 @@
 @property Hospital *selectedHosp;
 @property CLLocationCoordinate2D selectedCoord;
 
+@property CLPlacemark *itemDestino;
+@property MKMapItem *mapIt;
+
 @property (weak, nonatomic) IBOutlet MKMapView *mapa;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *detalheTipoMapa;
 @property (weak, nonatomic) IBOutlet UIButton *botaoMinhaLocalizacao;
@@ -29,6 +32,7 @@
 - (IBAction)tipoMapa:(id)sender;
 - (IBAction)minhaLocalizacao:(id)sender;
 - (IBAction)btnVoltar:(id)sender;
+- (void) gerarRotaPara;
 
 
 @end
