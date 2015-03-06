@@ -11,19 +11,25 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Achou Saúde" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
-                    <rect key="frame" x="129" y="387" width="222" height="43"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="270" verticalHuggingPriority="251" image="hospBanner" translatesAutoresizingMaskIntoConstraints="NO" id="pag-zU-sXh">
-                    <rect key="frame" x="65" y="25" width="350" height="350"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="270" verticalHuggingPriority="251" image="Launch" translatesAutoresizingMaskIntoConstraints="NO" id="pag-zU-sXh">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="350" id="VP9-0V-71L"/>
                         <constraint firstAttribute="width" constant="350" id="jbz-ta-obB"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="VP9-0V-71L"/>
+                            <exclude reference="jbz-ta-obB"/>
+                        </mask>
+                    </variation>
                 </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Achou Saúde" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
+                    <rect key="frame" x="129" y="387" width="222" height="43"/>
+                    <fontDescription key="fontDescription" name="TrebuchetMS-Italic" family="Trebuchet MS" pointSize="37"/>
+                    <color key="textColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.89646464646464641" green="0.89646464646464641" blue="0.89646464646464641" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -31,13 +37,17 @@
                 <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="3bc-d2-9H0"/>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="1/3" constant="1" id="5cJ-9S-tgC"/>
                 <constraint firstAttribute="trailing" secondItem="pag-zU-sXh" secondAttribute="trailing" constant="80" id="67j-Fh-qdg"/>
+                <constraint firstAttribute="bottom" secondItem="pag-zU-sXh" secondAttribute="bottom" id="BCl-Nn-xoK"/>
                 <constraint firstItem="pag-zU-sXh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="80" id="Ctp-zf-7eO"/>
                 <constraint firstAttribute="centerX" secondItem="pag-zU-sXh" secondAttribute="centerX" id="Gk6-jK-wEn"/>
                 <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="Koa-jz-hwk"/>
                 <constraint firstItem="pag-zU-sXh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="LAp-If-Vdh"/>
                 <constraint firstAttribute="trailing" secondItem="pag-zU-sXh" secondAttribute="trailing" constant="80" id="LGk-Ob-Kmx"/>
                 <constraint firstItem="pag-zU-sXh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="80" id="Mgf-tc-bWV"/>
+                <constraint firstItem="pag-zU-sXh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Vx1-md-R3M"/>
+                <constraint firstItem="pag-zU-sXh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bNR-BE-Vgh"/>
                 <constraint firstAttribute="centerX" secondItem="pag-zU-sXh" secondAttribute="centerX" id="c4W-Qs-SYN"/>
+                <constraint firstAttribute="trailing" secondItem="pag-zU-sXh" secondAttribute="trailing" id="dJ3-DJ-8Vs"/>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="fvb-Df-36g"/>
                 <constraint firstAttribute="centerY" secondItem="pag-zU-sXh" secondAttribute="centerY" constant="40" id="geT-6x-2l9"/>
                 <constraint firstItem="pag-zU-sXh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="hMH-oM-Lh3"/>
@@ -48,20 +58,22 @@
                 <mask key="constraints">
                     <exclude reference="67j-Fh-qdg"/>
                     <exclude reference="Ctp-zf-7eO"/>
+                    <exclude reference="Gk6-jK-wEn"/>
                     <exclude reference="LAp-If-Vdh"/>
                     <exclude reference="LGk-Ob-Kmx"/>
                     <exclude reference="Mgf-tc-bWV"/>
                     <exclude reference="c4W-Qs-SYN"/>
+                    <exclude reference="geT-6x-2l9"/>
                     <exclude reference="hMH-oM-Lh3"/>
                     <exclude reference="5cJ-9S-tgC"/>
                     <exclude reference="Koa-jz-hwk"/>
                     <exclude reference="fvb-Df-36g"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="548.5" y="455"/>
+            <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
     <resources>
-        <image name="hospBanner" width="283" height="283"/>
+        <image name="Launch" width="1024" height="1628"/>
     </resources>
 </document>

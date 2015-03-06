@@ -387,7 +387,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AchouSaude/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AchouSaude;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -400,7 +400,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AchouSaude/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AchouSaude;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -419,7 +419,7 @@
 				);
 				INFOPLIST_FILE = AchouSaudeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AchouSaudeTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AchouSaude.app/AchouSaude";
 			};
 			name = Debug;
@@ -434,7 +434,7 @@
 				);
 				INFOPLIST_FILE = AchouSaudeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AchouSaudeTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AchouSaude.app/AchouSaude";
 			};
 			name = Release;

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D5198D8C1A9FB30000EC3C5C"
-               BuildableName = "AchouSaude.app"
+               BuildableName = "Achou Sau&#x301;de.app"
                BlueprintName = "AchouSaude"
                ReferencedContainer = "container:AchouSaude.xcodeproj">
             </BuildableReference>
@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D5198DA81A9FB30000EC3C5C"
-               BuildableName = "AchouSaudeTests.xctest"
+               BuildableName = "Achou Sau&#x301;deTests.xctest"
                BlueprintName = "AchouSaudeTests"
                ReferencedContainer = "container:AchouSaude.xcodeproj">
             </BuildableReference>
@@ -47,7 +47,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D5198DA81A9FB30000EC3C5C"
-               BuildableName = "AchouSaudeTests.xctest"
+               BuildableName = "Achou Sau&#x301;deTests.xctest"
                BlueprintName = "AchouSaudeTests"
                ReferencedContainer = "container:AchouSaude.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D5198D8C1A9FB30000EC3C5C"
-            BuildableName = "AchouSaude.app"
+            BuildableName = "Achou Sau&#x301;de.app"
             BlueprintName = "AchouSaude"
             ReferencedContainer = "container:AchouSaude.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D5198D8C1A9FB30000EC3C5C"
-            BuildableName = "AchouSaude.app"
+            BuildableName = "Achou Sau&#x301;de.app"
             BlueprintName = "AchouSaude"
             ReferencedContainer = "container:AchouSaude.xcodeproj">
          </BuildableReference>
@@ -94,7 +94,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D5198D8C1A9FB30000EC3C5C"
-            BuildableName = "AchouSaude.app"
+            BuildableName = "Achou Sau&#x301;de.app"
             BlueprintName = "AchouSaude"
             ReferencedContainer = "container:AchouSaude.xcodeproj">
          </BuildableReference>

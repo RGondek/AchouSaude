@@ -159,7 +159,7 @@
     MKDirections *directions = [[MKDirections alloc] initWithRequest:request];
     [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
         if (error) {
-            NSLog(@"ERRO");
+            NSLog(@"ERRO %@", error);
         } else {
             if ([response.routes count] > 0) {
                 [mapa removeOverlays:mapa.overlays];

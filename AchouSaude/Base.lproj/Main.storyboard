@@ -69,7 +69,7 @@
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="N5S-i2-emh" secondAttribute="bottom" constant="10" id="znC-el-mzW"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Mapa" image="hospIcon" id="acW-dT-cKf"/>
                     <navigationItem key="navigationItem" title="Title" id="1yd-Fz-aDF"/>
                     <connections>
                         <outlet property="botaoMinhaLocalizacao" destination="Yvb-GJ-8zo" id="iDa-Kw-AfF"/>
@@ -92,9 +92,9 @@
                         <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planos de Saúde" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fBe-Yh-tVv">
                             <rect key="frame" x="0.0" y="-21" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.94779829545454541" green="0.94779829545454541" blue="0.94779829545454541" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                            <color key="textColor" red="0.20000000000000001" green="0.16862745098039217" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <prototypes>
@@ -110,8 +110,8 @@
                                                 <constraint firstAttribute="width" constant="100" id="VH0-na-rA8"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="84" placeholderIntrinsicHeight="24" text="Convenio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OxW-RK-d1R">
-                                            <rect key="frame" x="138" y="33" width="454" height="24"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="84" placeholderIntrinsicHeight="24" text="Convenio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OxW-RK-d1R">
+                                            <rect key="frame" x="118" y="33" width="474" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                             <color key="textColor" cyan="0.77582750822368407" magenta="0.80248719453811646" yellow="0.94119173288345337" black="0.0034180283546447754" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -119,7 +119,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="FiZ-8y-wJu" firstAttribute="leading" secondItem="qDs-SF-lAj" secondAttribute="leadingMargin" id="2J0-i9-fQj"/>
-                                        <constraint firstItem="OxW-RK-d1R" firstAttribute="leading" secondItem="FiZ-8y-wJu" secondAttribute="trailing" constant="30" id="MX3-qQ-UPw"/>
+                                        <constraint firstItem="OxW-RK-d1R" firstAttribute="leading" secondItem="FiZ-8y-wJu" secondAttribute="trailing" constant="10" id="MX3-qQ-UPw"/>
                                         <constraint firstItem="OxW-RK-d1R" firstAttribute="trailing" secondItem="qDs-SF-lAj" secondAttribute="trailingMargin" id="ZNo-j0-NXa"/>
                                         <constraint firstAttribute="centerY" secondItem="FiZ-8y-wJu" secondAttribute="centerY" id="kim-ES-fBm"/>
                                         <constraint firstAttribute="centerY" secondItem="OxW-RK-d1R" secondAttribute="centerY" id="zMe-oB-O9w"/>
@@ -142,7 +142,7 @@
             </objects>
             <point key="canvasLocation" x="-548" y="-290"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Lista de Hospitais-->
         <scene sceneID="P10-8A-hlL">
             <objects>
                 <tableViewController id="oEn-AY-8aa" customClass="TableViewController" sceneMemberID="viewController">
@@ -153,9 +153,9 @@
                         <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hospitais" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xts-vQ-fkd">
                             <rect key="frame" x="0.0" y="-21" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                            <color key="textColor" red="0.14901960784313725" green="0.12549019607843137" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <prototypes>
@@ -208,7 +208,7 @@
                             <outlet property="delegate" destination="oEn-AY-8aa" id="E2d-KE-lwo"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="SVr-oN-LDc"/>
+                    <tabBarItem key="tabBarItem" title="Lista de Hospitais" image="first" id="SVr-oN-LDc"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vjE-4w-2E5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -236,5 +236,6 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
+        <image name="hospIcon" width="43" height="43"/>
     </resources>
 </document>
