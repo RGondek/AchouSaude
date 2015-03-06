@@ -46,6 +46,8 @@
     
     NSArray *vetPhone = [[NSArray alloc]initWithObjects:@"(11) 2151-1233", @"(11) 2189-1199", @"(11) 2186-9900", @"(11) 3345-2000", @"(11) 3505-1000", @"(11) 2602-8000", @"(11) 5056-8714", @"(11) 3053-6611", @"(11) 5080-4300", @"(11) 3069-5000", @"(11) 3677-2000", @"(11) 3549-0000", @"(11) 5087-8700", @"(11) 5908-6474", @"(11) 3821-5300", @"(11) 5080-2002", @"(11) 2176-7700", @"(11) 5080-6000", @"(11) 2070-6000", @"(11) 3652-8015", nil];
     
+    
+    
     NSMutableArray *convenioHosp = [[NSMutableArray alloc] init];
     NSArray *convenios = @[@"Allianz",@"Care Plus", @"Golden Cross", @"Dix Amil", @"Medial", @"Marítima"];
     [convenioHosp addObject:convenios];
@@ -96,7 +98,7 @@
     hospitais = [[NSMutableArray alloc] init];
     
     for (int i = 0; i < [vetNome count]; i++) {
-        hospit = [[Hospital alloc] initWithName:vetNome[i] andAddress:vetEnd[i] andPhone:vetPhone[i] andTime:@"15h" andImage:vetImg[i] andConvenios:convenioHosp[i]];
+        hospit = [[Hospital alloc] initWithName:vetNome[i] andAddress:vetEnd[i] andPhone:vetPhone[i] andTime:@"24h" andImage:vetImg[i] andConvenios:convenioHosp[i]];
         [hospitais addObject:hospit];
     }
 }
