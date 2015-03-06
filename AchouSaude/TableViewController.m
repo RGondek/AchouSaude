@@ -28,7 +28,6 @@
     UIEdgeInsets inset = UIEdgeInsetsMake(25, 0, 0, 0);
     self.tableView.contentInset = inset;
 
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -118,9 +117,7 @@
     // Pass the selected object to the new view controller.
 }
 
-
-- (IBAction)selectRow:(id)sender {
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{;
     long row = [indexPath row];
     
     FirstViewController *map = [[super tabBarController].viewControllers objectAtIndex:0];
@@ -129,7 +126,6 @@
     map.selected = YES;
     
     [[super tabBarController] setSelectedIndex:0];
-
 }
 
 @end
