@@ -94,9 +94,9 @@
             pinView.image = [UIImage imageNamed:@"hospIcon.png"];
             pinView.calloutOffset = CGPointMake(0, 5);
             
-            //            UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-            //            pinView.rightCalloutAccessoryView = rightButton;
-            //
+                        UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+                        pinView.rightCalloutAccessoryView = rightButton;
+            
             UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hospIcon.png"]];
             pinView.leftCalloutAccessoryView = iconView;
             pinView.leftCalloutAccessoryView.center = CGPointMake(0, 20);
@@ -147,6 +147,36 @@
 //    }];
 //
 //}
+
+- (void) gerarRota: (MKMapView*) origem para:(MKMapItem*) destino {
+    MKDirectionsRequest * request = [[MKDirectionsRequest alloc] init];
+    request.source = origem;
+    request.destination = destino;
+    request.requestsAlternateRoutes = YES;
+    MKDirections *directions = [[MKDirections alloc] initWithRequest:request];
+    [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
+        if (error) {
+            NSLog(@"ERRO");
+        } else {
+            if ([response.routes count] > 0) {
+                [mapa removeOverlays:mapa.overlays];
+                
+                MKRoute *rota = response.routes[0];
+                [mapa addOverlay:rota.polyline level:MKOverlayLevelAboveRoads];
+            } else {
+                NSLog(@"Não há rotas alternativas");
+            }
+        }
+    }];
+}
+
+
+- (MKOverlayRenderer *)mapView:(MKMapView *) mapView rendererForOverlay:(id<MKOverlay>)overlay {
+    MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithOverlay:overlay];
+    renderer.strokeColor = [UIColor redColor];
+    renderer.lineWidth = 3.0;
+    return renderer;
+}
 
 
 //Definindo o tipo de mapa.
