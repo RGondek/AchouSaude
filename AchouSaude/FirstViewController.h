@@ -12,8 +12,6 @@
 
 @interface FirstViewController : UIViewController <CLLocationManagerDelegate>
 
-@property NSMutableArray *annot;
-
 @property NSMutableArray *hospitais;
 @property Hospital *hospit;
 
@@ -21,7 +19,7 @@
 @property Hospital *selectedHosp;
 @property CLLocationCoordinate2D selectedCoord;
 
-@property CLPlacemark *itemDestino;
+@property MKPlacemark *itemDestino;
 @property MKMapItem *mapIt;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapa;

@@ -79,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="997" y="-571"/>
+            <point key="canvasLocation" x="977" y="-585"/>
         </scene>
         <!--Plano Table-->
         <scene sceneID="Evq-dW-Yhv">
@@ -140,7 +140,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kvq-eY-HYk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-548" y="-290"/>
+            <point key="canvasLocation" x="-471" y="-255"/>
         </scene>
         <!--Lista de Hospitais-->
         <scene sceneID="P10-8A-hlL">
@@ -176,8 +176,8 @@
                                             <color key="textColor" red="0.090196078431372548" green="0.074509803921568626" blue="0.062745098039215685" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Endereço" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcQ-Oo-oz9">
-                                            <rect key="frame" x="113" y="51" width="479" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endereço" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcQ-Oo-oz9">
+                                            <rect key="frame" x="113" y="53" width="479" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.090196078431372548" green="0.074509803921568626" blue="0.062745098039215685" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -213,7 +213,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vjE-4w-2E5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="997" y="144"/>
+            <point key="canvasLocation" x="977" y="67"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

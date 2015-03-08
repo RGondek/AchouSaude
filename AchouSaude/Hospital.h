@@ -17,6 +17,7 @@
 @property NSString* phone;
 @property NSString* time;
 @property UIImage* image;
+@property MKPlacemark* placemark;
 
 -(instancetype) initWithName:(NSString*)nome andAddress:(NSString*)end andPhone:(NSString*)tel andTime:(NSString*)hora andImage:(NSString*)img andConvenios:(NSArray*)conv;
 
