@@ -90,11 +90,6 @@
     convenios = @[@"Allianz",@"Amil",@"Amil Blue", @"Bradesco", @"Care Plus", @"Dix/Amil", @"Gama Saúde",@"Golden Cross", @"Green Line", @"Marítima",@"Medial",@"Med Service",@"Porto Seguro", @"Unimed Seguros"];
     [convenioHosp addObject:convenios];
     
-    
-    
-    
-    
-    
     hospitais = [[NSMutableArray alloc] init];
     
     for (int i = 0; i < [vetNome count]; i++) {

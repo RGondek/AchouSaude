@@ -155,7 +155,7 @@
     MKDirectionsRequest * request = [[MKDirectionsRequest alloc] init];
     request.source = [MKMapItem mapItemForCurrentLocation];
     request.destination = mapIt;
-    request.requestsAlternateRoutes = YES;
+    //request.requestsAlternateRoutes = YES;
     MKDirections *directions = [[MKDirections alloc] initWithRequest:request];
     [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
         if (error) {
