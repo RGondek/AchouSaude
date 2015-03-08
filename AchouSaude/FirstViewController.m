@@ -44,7 +44,7 @@
     }
     
     mapa.showsUserLocation = YES;
-    
+
     for (Hospital *hosp in hospitais) {
         CLGeocoder *geocoder = [[CLGeocoder alloc] init];
         [geocoder geocodeAddressString:[hosp address] completionHandler:^(NSArray *placemarks, NSError *error) {
@@ -68,7 +68,7 @@
     if (selected) {
         itemDestino = selectedHosp.placemark;
         selectedCoord = itemDestino.location.coordinate;
-        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(selectedCoord, 500, 500);
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(selectedCoord, 1000, 1000);
         [mapa setRegion:region animated:YES];
     }
     selected = NO;
@@ -108,8 +108,9 @@
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     CLLocationCoordinate2D coord = [[locations lastObject]coordinate];
     if (selected) { coord = selectedCoord; }
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 500, 500);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 1000, 1000);
     [mapa setRegion:region animated:YES];
+    mapa.userTrackingMode = YES;
     [gerenciadorDeLocalizacao stopUpdatingLocation];
 }
 
@@ -117,33 +118,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-//- (IBAction)btnVoltar:(id)sender {
-//    MKLocalSearchRequest *pedido = [[MKLocalSearchRequest alloc] init];
-//    pedido.naturalLanguageQuery = @"Hosp ital";
-//    pedido.region = mapa.region;
-//    
-//    MKLocalSearch *pesquisa = [[MKLocalSearch alloc] initWithRequest:pedido];
-//    
-//    _matchingItems = [[NSMutableArray alloc] init];
-//    
-//    [pesquisa startWithCompletionHandler:^(MKLocalSearchResponse
-//                                           *response, NSError *error) {
-//        if (response.mapItems.count == 0)
-//            NSLog(@"No Matches");
-//        else
-//            for (MKMapItem *item in response.mapItems)
-//            {
-//                [_matchingItems addObject:item];
-//                MKPointAnnotation *annotation =
-//                [[MKPointAnnotation alloc]init];
-//                annotation.coordinate = item.placemark.coordinate;
-//                annotation.title = item.name;
-//                [mapa addAnnotation:annotation];
-//            }
-//    }];
-//
-//}
 
 - (void) gerarRotaPara{
     MKDirectionsRequest * request = [[MKDirectionsRequest alloc] init];
@@ -167,6 +141,7 @@
             }
         }
     }];
+    [gerenciadorDeLocalizacao startUpdatingLocation];
 }
 
 
